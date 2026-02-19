@@ -1,0 +1,96 @@
+import Link from 'next/link';
+import { Section } from '@/components/ui/section';
+import { Container } from '@/components/ui/container';
+import { GlassCard } from '@/components/ui/glass-card';
+import { PillBadge } from '@/components/ui/pill-badge';
+import { SectionReveal } from '@/components/ui/section-reveal';
+import { ExternalLink } from 'lucide-react';
+
+const projects = [
+  {
+    title: 'GuitaClara',
+    description: 'App de finanzas personales con chatbot financiero.',
+    tech: ['React', 'TypeScript', 'Tailwind'],
+    href: 'https://guitaclara.vercel.app/',
+    featured: true,
+    placeholder: false,
+  },
+  {
+    title: 'Proyecto 2',
+    description: 'Descripción pendiente.',
+    tech: ['Next.js', 'MongoDB', 'Node.js'],
+    href: '#',
+    featured: false,
+    placeholder: true,
+  },
+  {
+    title: 'Proyecto 3',
+    description: 'Descripción pendiente.',
+    tech: ['React', 'SQL Server', 'APIs'],
+    href: '#',
+    featured: false,
+    placeholder: true,
+  },
+];
+
+export function ProjectsSection() {
+  return (
+    <Section
+      id="proyectos"
+      title="Proyectos"
+      subtitle="Aplicaciones y herramientas en contexto laboral y personal."
+      className="bg-[#0b0f14]/20"
+    >
+      <Container>
+        <SectionReveal stagger staggerClass="grid gap-6 sm:grid-cols-2">
+          {projects.map((project, index) => (
+            <GlassCard
+              key={index}
+              as="article"
+              className={
+                project.featured
+                  ? 'flex flex-col p-6 md:p-7 sm:col-span-2'
+                  : 'flex flex-col p-6 md:p-7'
+              }
+            >
+              <div className="flex flex-col flex-1">
+                {project.featured && (
+                  <PillBadge label="Destacado" text="En producción" className="mb-3 w-fit" />
+                )}
+                <h3 className="text-lg font-light tracking-tight text-white/90">
+                  {project.title}
+                </h3>
+                <p className="mt-2 text-sm font-light text-white/70">{project.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-light uppercase tracking-wider text-white/60"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-6 flex items-center">
+                  {project.placeholder ? (
+                    <span className="text-xs font-light text-white/50">TODO</span>
+                  ) : (
+                    <Link
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/10 px-4 py-2.5 text-sm font-light text-white/90 backdrop-blur-sm transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30"
+                    >
+                      Ver proyecto
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </GlassCard>
+          ))}
+        </SectionReveal>
+      </Container>
+    </Section>
+  );
+}
