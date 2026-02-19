@@ -1,0 +1,32 @@
+name: Ignacio Ravettini
+site: https://ravettini.com
+type: personal-portfolio
+language: es-AR
+
+headline: Analista de datos y Desarrollador Web
+summary: Portfolio personal con experiencia, proyectos y habilidades en análisis de datos y desarrollo web.
+
+primary_skills:
+- SQL y modelado de datos
+- Dashboards y visualización (BI)
+- Limpieza/transformación de datos (ETL)
+- Desarrollo web (React / Next.js)
+- Integración de APIs y automatización
+
+sections:
+- Home: https://ravettini.com/
+- Sobre mí: https://ravettini.com/#sobre-mi
+- Especialidades: https://ravettini.com/#especialidades
+- Experiencia: https://ravettini.com/#experiencia
+- Proyectos: https://ravettini.com/#proyectos
+- Habilidades: https://ravettini.com/#habilidades
+- Contacto: https://ravettini.com/#contacto
+
+contact:
+- Form: https://ravettini.com/#contacto
+
+notes:
+- Preferencia: respuestas claras, concretas y orientadas a impacto.
+- Este sitio es un portfolio personal.
+
+updated: 2026-02-19

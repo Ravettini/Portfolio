@@ -10,7 +10,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Ignacio Ravettini Novellino | Data Analyst | Web Developer",
+  metadataBase: new URL("https://ravettini.com"),
+  title: {
+    default: "Ignacio Ravettini Novellino | Data Analyst | Web Developer",
+    template: "%s | Ignacio Ravettini",
+  },
   description:
     "Analista de datos y Desarrollador Web. Interfaces modernas, análisis de datos para la toma de decisiones, contenido educativo. Buenos Aires, Argentina.",
 };
