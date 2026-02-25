@@ -26,6 +26,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="dark">
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-E9E6W9EV5G"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-E9E6W9EV5G');
+            `,
+          }}
+        />
+      </head>
       <body className={`${plusJakarta.variable} font-sans min-h-screen w-full min-w-full bg-[#05070a] text-white/90 antialiased`}>
         <div className="noise-overlay" aria-hidden />
         <div className="relative z-10">{children}</div>
