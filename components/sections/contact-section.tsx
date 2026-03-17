@@ -2,26 +2,18 @@ import { Section } from '@/components/ui/section';
 import { Container } from '@/components/ui/container';
 import { GlassCard } from '@/components/ui/glass-card';
 import { SectionReveal } from '@/components/ui/section-reveal';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin } from 'lucide-react';
 
 const links = [
   {
     label: 'Email',
-    href: 'mailto:contacto@example.com',
+    href: 'mailto:ignaciorave21@gmail.com',
     icon: Mail,
-    placeholder: true,
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/example',
+    href: 'https://www.linkedin.com/in/ignacio-ravettini-novellino/',
     icon: Linkedin,
-    placeholder: true,
-  },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/example',
-    icon: Github,
-    placeholder: true,
   },
 ];
 
@@ -57,14 +49,14 @@ export function ContactSection() {
                   );
                 })}
               </div>
-              <button
-                type="button"
-                disabled
-                className="mt-6 rounded-2xl border border-white/10 bg-white/5 px-5 py-2.5 text-xs font-light tracking-tight text-white/50 backdrop-blur-sm cursor-not-allowed"
-                title="Próximamente"
+              <a
+                href="/cv-ignacio-ravettini.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/10 px-5 py-2.5 text-xs font-light tracking-tight text-white/90 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30"
               >
-                CV disponible próximamente
-              </button>
+                Ver CV
+              </a>
               <p className="mt-8 text-xs font-light text-white/50">
                 Buenos Aires, Argentina
               </p>

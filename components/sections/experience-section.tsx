@@ -29,7 +29,7 @@ const experiences = [
     ],
   },
   {
-    period: 'Diciembre 2025 – Actualidad',
+    period: 'Diciembre 2025 – 10 de marzo de 2026',
     role: 'Automatizador de procesos',
     org: 'Sofijobs',
     tags: ['N8N', 'Automatización', 'Procesos'],

@@ -108,14 +108,14 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <button
-            type="button"
-            disabled
-            className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-light tracking-tight text-white/50 backdrop-blur-sm cursor-not-allowed"
-            title="Próximamente"
+          <a
+            href="/cv-ignacio-ravettini.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-2xl border border-white/10 bg-white/10 px-4 py-2 text-xs font-light tracking-tight text-white/90 backdrop-blur-sm hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30"
           >
-            CV disponible próximamente
-          </button>
+            Ver CV
+          </a>
 
           <button
             type="button"
