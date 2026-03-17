@@ -55,7 +55,7 @@ export function ContactSection() {
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/10 px-5 py-2.5 text-xs font-light tracking-tight text-white/90 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30"
               >
-                Ver CV
+                Descargar CV
               </a>
               <p className="mt-8 text-xs font-light text-white/50">
                 Buenos Aires, Argentina

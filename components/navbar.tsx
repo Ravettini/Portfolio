@@ -114,7 +114,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="rounded-2xl border border-white/10 bg-white/10 px-4 py-2 text-xs font-light tracking-tight text-white/90 backdrop-blur-sm hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30"
           >
-            Ver CV
+            Descargar CV
           </a>
 
           <button
