@@ -8,20 +8,21 @@ import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: 'GuitaClara',
-    description: 'App de finanzas personales con chatbot financiero.',
-    tech: ['React', 'TypeScript', 'Tailwind'],
-    href: 'https://guitaclara.vercel.app/',
+    title: 'Media Compressor',
+    description: 'Plataforma para comprimir imágenes y videos de forma rápida y simple.',
+    tech: ['Next.js', 'TypeScript', 'FFmpeg', 'Vercel'],
+    href: 'https://proyectocompresor.onrender.com/',
     featured: true,
     placeholder: false,
   },
   {
-    title: 'Proyecto 2',
-    description: 'Descripción pendiente.',
-    tech: ['Next.js', 'MongoDB', 'Node.js'],
-    href: '#',
+    title: 'V-Mail Validator',
+    description:
+      'Sistema que detecta correos inválidos, filtra direcciones no deseadas y prepara listas más limpias para tus campañas institucionales.',
+    tech: ['Next.js', 'TypeScript', 'Validación de datos'],
+    href: 'https://vmailproject.vercel.app/',
     featured: false,
-    placeholder: true,
+    placeholder: false,
   },
   {
     title: 'Proyecto 3',

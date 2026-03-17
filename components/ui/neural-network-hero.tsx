@@ -206,8 +206,8 @@ function ShaderPlane({ reducedMotion }: { reducedMotion: boolean }) {
   });
 
   return (
-    <mesh ref={meshRef} position={[0, -0.75, -0.5]}>
-      <planeGeometry args={[4, 4]} />
+    <mesh ref={meshRef} position={[0, -0.6, -0.5]}>
+      <planeGeometry args={[5, 5]} />
       <cPPNShaderMaterial ref={materialRef} side={THREE.DoubleSide} />
     </mesh>
   );
@@ -215,8 +215,33 @@ function ShaderPlane({ reducedMotion }: { reducedMotion: boolean }) {
 
 function ShaderBackground({ reducedMotion }: { reducedMotion: boolean }) {
   const canvasRef = useRef<HTMLDivElement | null>(null);
-  
-  const camera = useMemo(() => ({ position: [0, 0, 1] as [number, number, number], fov: 75, near: 0.1, far: 1000 }), []);
+  const [isVisible, setIsVisible] = useState(true);
+
+  const camera = useMemo(
+    () => ({
+      position: [0, 0, 1] as [number, number, number],
+      fov: 75,
+      near: 0.1,
+      far: 1000,
+    }),
+    []
+  );
+
+  useEffect(() => {
+    const el = canvasRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Solo activamos el Canvas cuando al menos ~20% del hero está visible
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useGSAP(
     () => {
@@ -226,25 +251,25 @@ function ShaderBackground({ reducedMotion }: { reducedMotion: boolean }) {
         }
         return;
       }
-      
+
       gsap.set(canvasRef.current!, {
         filter: 'blur(20px)',
         scale: 1.1,
-        autoAlpha: 0.7
+        autoAlpha: 0.7,
       });
-      
+
       gsap.to(canvasRef.current!, {
         filter: 'blur(0px)',
         scale: 1,
         autoAlpha: 1,
         duration: 1.5,
         ease: 'power3.out',
-        delay: 0.3
+        delay: 0.3,
       });
     },
     { scope: canvasRef, dependencies: [reducedMotion] }
   );
-  
+
   return (
     <div
       ref={canvasRef}
@@ -252,14 +277,16 @@ function ShaderBackground({ reducedMotion }: { reducedMotion: boolean }) {
       style={{ left: 0, right: 0, width: '100%', minWidth: '100%' }}
       aria-hidden
     >
-      <Canvas
-        camera={camera}
-        gl={{ antialias: true, alpha: false }}
-        dpr={[1, 2]}
-        style={{ width: '100%', height: '100%' }}
-      >
-        <ShaderPlane reducedMotion={reducedMotion} />
-      </Canvas>
+      {!reducedMotion && isVisible && (
+        <Canvas
+          camera={camera}
+          gl={{ antialias: false, alpha: false, powerPreference: 'high-performance' }}
+          dpr={[1, 1.3]}
+          style={{ width: '100%', height: '100%' }}
+        >
+          <ShaderPlane reducedMotion={reducedMotion} />
+        </Canvas>
+      )}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#05070a]/80 via-transparent to-[#0f1f3d]/30" />
     </div>
   );

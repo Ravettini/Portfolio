@@ -22,29 +22,45 @@ export function Navbar() {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20);
-      const sections = navLinks.map((l) => l.href.slice(1)).filter(Boolean);
-      const scrollY = window.scrollY;
-      const viewportMid = scrollY + window.innerHeight / 2;
-      let current: string | null = null;
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (!el) continue;
-        const top = el.offsetTop;
-        const height = el.offsetHeight;
-        if (viewportMid >= top && viewportMid < top + height) {
+    const sectionIds = navLinks.map((l) => l.href.slice(1)).filter(Boolean);
+    const sectionElements = sectionIds
+      .map((id) => ({ id, el: document.getElementById(id) }))
+      .filter((item): item is { id: string; el: HTMLElement } => !!item.el);
+
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        setScrolled(scrollY > 20);
+
+        const viewportMid = scrollY + window.innerHeight / 2;
+        let current: string | null = null;
+
+        for (const { id, el } of sectionElements) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (viewportMid >= top && viewportMid < top + height) {
+            current = id;
+            break;
+          }
+          if (top > viewportMid) break;
           current = id;
-          break;
         }
-        if (top > viewportMid) break;
-        current = id;
-      }
-      setActiveId(current);
+
+        setActiveId(current);
+        ticking = false;
+      });
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
