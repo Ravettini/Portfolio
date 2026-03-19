@@ -8,10 +8,11 @@ import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Media Compressor',
-    description: 'Plataforma para comprimir imágenes y videos de forma rápida y simple.',
-    tech: ['Next.js', 'TypeScript', 'FFmpeg', 'Vercel'],
-    href: 'https://proyectocompresor.onrender.com/',
+    title: 'Simulacro de Entrevistas (IA)',
+    description:
+      '¿Tenés una entrevista pronto y te da miedo que te vaya mal? Para eso armé un simulador de entrevistas basado en IA: subís tu CV, analiza tu perfil y te genera una entrevista personalizada para practicar, tanto de soft skills como de habilidades técnicas, ya sea en vivo o por turnos.',
+    tech: ['IA', 'CV', 'Entrevistas'],
+    href: 'https://simulacro-entrevista-1.onrender.com/',
     featured: true,
     placeholder: false,
   },
@@ -25,12 +26,20 @@ const projects = [
     placeholder: false,
   },
   {
-    title: 'Proyecto 3',
-    description: 'Descripción pendiente.',
-    tech: ['React', 'SQL Server', 'APIs'],
-    href: '#',
+    title: 'Media Compressor',
+    description: 'Plataforma para comprimir imágenes y videos de forma rápida y simple.',
+    tech: ['Next.js', 'TypeScript', 'FFmpeg', 'Vercel'],
+    href: 'https://proyectocompresor.onrender.com/',
     featured: false,
-    placeholder: true,
+    placeholder: false,
+  },
+  {
+    title: 'Acqua Di Colbert',
+    description: 'Landing page profesional con animaciones del perfume Acqua Di Colbert.',
+    tech: ['Landing', 'Animaciones', 'Netlify'],
+    href: 'https://acquadicolbert.netlify.app/',
+    featured: false,
+    placeholder: false,
   },
 ];
 
