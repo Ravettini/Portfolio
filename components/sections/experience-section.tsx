@@ -17,7 +17,7 @@ const experiences = [
     ],
   },
   {
-    period: 'Septiembre 2025 – Presente',
+    period: 'Abril 2025 – Presente',
     role: 'Analista de datos',
     org: 'GCBA',
     tags: ['Data', 'Visualización', 'SQL', 'Informes'],
