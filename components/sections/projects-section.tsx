@@ -18,7 +18,7 @@ export function ProjectsSection() {
     <Section
       id="proyectos"
       title="Proyectos"
-      subtitle="Aplicaciones y herramientas en contexto laboral y personal."
+      subtitle="Plataformas web, webapps y herramientas que construí de punta a punta."
       className="bg-[#0b0f14]/20"
     >
       <Container>

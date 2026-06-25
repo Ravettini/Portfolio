@@ -5,29 +5,30 @@ import { SectionReveal } from '@/components/ui/section-reveal';
 
 const skillGroups = [
   {
-    label: 'Web',
+    label: 'Frontend',
     skills: [
       'HTML', 'CSS', 'Bootstrap', 'Tailwind', 'JS', 'TS', 'React', 'Next.js',
-      'jQuery', 'Responsive Design', 'Vite', 'Express', 'Prisma',
+      'jQuery', 'Responsive Design', 'Vite',
     ],
   },
   {
     label: 'Backend / DB',
     skills: [
-      'SQL Server', 'MongoDB', 'APIs', 'CRUD', 'Node.js', 'Express', 'REST',
+      'Node.js', 'Express', 'Prisma', 'SQL Server', 'MongoDB', 'PostgreSQL',
+      'APIs', 'CRUD', 'REST',
     ],
   },
   {
-    label: 'Datos',
+    label: 'Producto',
     skills: [
-      'Manejo de datos', 'SQL queries', 'Limpieza', 'Visualizaciones',
-      'Informes', 'Análisis estadístico',
+      'Arquitectura web', 'Integraciones', 'Despliegue', 'Mantenimiento evolutivo',
+      'Documentación técnica',
     ],
   },
   {
     label: 'Educación / Comunicación',
     skills: [
-      'Contenido didáctico', 'Currículas', 'Comunicación técnica', 'Documentación',
+      'Contenido didáctico', 'Currículas', 'Comunicación técnica', 'Mentoría',
     ],
   },
   {

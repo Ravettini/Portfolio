@@ -6,19 +6,19 @@
 
 ## Headline
 
-Analista de datos y Desarrollador Web
+Desarrollador Web Full Stack
 
 ## Summary
 
-Portfolio personal con experiencia, proyectos y habilidades en análisis de datos y desarrollo web.
+Portfolio personal de desarrollo web full stack, con proyectos, experiencia y habilidades en creación de software web y productos digitales.
 
 ## Primary skills
 
-- SQL y modelado de datos
-- Dashboards y visualización (BI)
-- Limpieza/transformación de datos (ETL)
-- Desarrollo web (React / Next.js)
-- Integración de APIs y automatización
+- Desarrollo web full stack (React / Next.js)
+- Backend con Node.js, Express y Prisma
+- APIs, bases de datos y arquitectura web
+- Productos web en producción
+- Integración de servicios y automatización
 
 ## Sections
 
@@ -41,4 +41,4 @@ Portfolio personal con experiencia, proyectos y habilidades en análisis de dato
 - Preferencia: respuestas claras, concretas y orientadas a impacto.
 - Este sitio es un portfolio personal.
 
-**Updated:** 2026-02-19
+**Updated:** 2026-06-25

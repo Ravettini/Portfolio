@@ -7,22 +7,22 @@ import { ArrowRight } from 'lucide-react';
 
 const specialties = [
   {
-    id: 'data',
-    image: encodeURI('/dibujos_rana/data analyst.png'),
-    title: 'Data Analyst',
-    bullets: ['Dashboards y KPIs', 'Análisis exploratorio', 'Data cleaning'],
-  },
-  {
     id: 'fullstack',
     image: '/dibujos_rana/full_stack.png',
     title: 'Full Stack',
     bullets: ['Apps web end-to-end', 'APIs + DB', 'UI/UX moderno'],
   },
   {
+    id: 'products',
+    image: encodeURI('/dibujos_rana/data analyst.png'),
+    title: 'Productos web',
+    bullets: ['Webapps y paneles admin', 'Plataformas a medida', 'De idea a producción'],
+  },
+  {
     id: 'automation',
     image: encodeURI('/dibujos_rana/workflow fuilder (automatization.png'),
     title: 'Automatización',
-    bullets: ['Workflows (n8n)', 'Integración de servicios', 'Generación de documentos'],
+    bullets: ['Workflows (n8n)', 'Integración de servicios', 'Procesos operativos'],
   },
 ];
 
@@ -31,7 +31,7 @@ export function SpecialtiesSection() {
     <Section
       id="especialidades"
       title="Lo que construyo"
-      subtitle="Data, desarrollo full-stack y automatización de procesos."
+      subtitle="Desarrollo full stack, productos web y automatización de procesos."
       className="bg-[#0b0f14]/20"
     >
       <Container>

@@ -69,7 +69,7 @@ export function ExperienceSection() {
     <Section
       id="experiencia"
       title="Experiencia"
-      subtitle="Trayectoria en análisis de datos, desarrollo web y educación."
+      subtitle="Trayectoria construyendo productos web, automatizaciones y formación técnica."
     >
       <Container>
         <div className="flex flex-col gap-16 md:gap-20">

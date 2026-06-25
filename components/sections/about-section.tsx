@@ -13,12 +13,15 @@ export function AboutSection() {
             <div className="flex flex-col gap-8">
               <div>
                 <p className="text-white/90 font-light leading-relaxed tracking-tight">
-                  Analista de datos y Desarrollador Web. Desarrollo interfaces web modernas, analizo
-                  datos para la toma de decisiones y diseño contenido educativo de programación.
+                  Desarrollador web full stack y creador de software. Diseño y construyo
+                  aplicaciones web completas: interfaces modernas, APIs, bases de datos e
+                  integraciones, con foco en producto y en que la solución funcione en el mundo
+                  real.
                 </p>
                 <p className="mt-4 text-white/70 font-light leading-relaxed tracking-tight">
-                  Especializado en soluciones que combinan tecnología y claridad comunicativa.
-                  Actualmente en el Gobierno de la Ciudad de Buenos Aires (GCBA).
+                  Especializado en transformar procesos manuales en plataformas web usables,
+                  escalables y mantenibles. Actualmente en el Gobierno de la Ciudad de Buenos Aires
+                  (GCBA).
                 </p>
               </div>
               <div className="lg:hidden flex justify-center">
@@ -31,22 +34,22 @@ export function AboutSection() {
               <div className="flex flex-col gap-6">
                 <GlassCard>
                   <h3 className="text-[10px] font-light uppercase tracking-[0.08em] text-white/50">
-                    Analista de datos
+                    Desarrollador web full stack
                   </h3>
                   <p className="mt-2 text-sm font-light text-white/80 tracking-tight">
-                    Análisis de datos para políticas públicas, informes y visualizaciones. Limpieza
-                    de datos, SQL y dashboards. Trabajo en equipos multidisciplinarios con foco en
-                    claridad y impacto.
+                    Webapps, paneles administrativos y plataformas a medida con React, Next.js,
+                    Node.js y PostgreSQL. Trabajo de punta a punta: arquitectura, frontend, backend,
+                    despliegue y evolución del producto.
                   </p>
                 </GlassCard>
                 <GlassCard>
                   <h3 className="text-[10px] font-light uppercase tracking-[0.08em] text-white/50">
-                    Desarrollador web
+                    Producto y automatización
                   </h3>
                   <p className="mt-2 text-sm font-light text-white/80 tracking-tight">
-                    Interfaces y aplicaciones web modernas (React, Next.js). Integración de APIs,
-                    mantenimiento evolutivo y buenas prácticas. Contenido didáctico y documentación
-                    técnica.
+                    Integración de APIs, flujos automatizados y herramientas internas que ordenan
+                    operaciones reales. También experiencia en contenido didáctico y documentación
+                    técnica cuando el proyecto lo requiere.
                   </p>
                 </GlassCard>
               </div>

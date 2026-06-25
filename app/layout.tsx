@@ -12,11 +12,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ravettini.com"),
   title: {
-    default: "Ignacio Ravettini Novellino | Data Analyst | Web Developer",
+    default: "Ignacio Ravettini Novellino | Desarrollador Web Full Stack",
     template: "%s | Ignacio Ravettini",
   },
   description:
-    "Analista de datos y Desarrollador Web. Interfaces modernas, análisis de datos para la toma de decisiones, contenido educativo. Buenos Aires, Argentina.",
+    "Desarrollador web full stack y creador de software. Aplicaciones web modernas, productos digitales y plataformas en producción. Buenos Aires, Argentina.",
 };
 
 export default function RootLayout({

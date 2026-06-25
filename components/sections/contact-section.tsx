@@ -30,7 +30,7 @@ export function ContactSection() {
           <GlassCard className="p-8 md:p-10">
             <div className="flex flex-col items-center text-center">
               <p className="max-w-md text-white/80 font-light leading-relaxed">
-                Si querés conectar o charlar sobre datos, desarrollo o educación técnica, acá me encontrás.
+                Si querés conectar o charlar sobre desarrollo web, productos digitales o educación técnica, acá me encontrás.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 {links.map((item) => {

@@ -10,15 +10,15 @@ const NeuralNetworkHero = dynamic(
 export function HeroClient() {
   return (
     <NeuralNetworkHero
-      title="Datos claros. Productos sólidos."
-      description="Analizo datos para decisiones públicas y construyo aplicaciones web modernas con foco en claridad, impacto y buenas prácticas."
+      title="Creo software web que resuelve problemas reales."
+      description="Desarrollador web full stack. Diseño, construyo y mantengo aplicaciones web completas — desde la interfaz hasta la base de datos — con foco en producto, claridad y buenas prácticas."
       badgeLabel="Actualmente"
       badgeText="GCBA"
       ctaButtons={[
         { text: 'Ver proyectos', href: '#proyectos', primary: true },
         { text: 'Contacto', href: '#contacto' },
       ]}
-      microDetails={['SQL & Visualización', 'React / Next.js', 'Comunicación clara']}
+      microDetails={['React / Next.js', 'Full stack', 'Productos en producción']}
     />
   );
 }

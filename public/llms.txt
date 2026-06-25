@@ -3,15 +3,15 @@ site: https://ravettini.com
 type: personal-portfolio
 language: es-AR
 
-headline: Analista de datos y Desarrollador Web
-summary: Portfolio personal con experiencia, proyectos y habilidades en análisis de datos y desarrollo web.
+headline: Desarrollador Web Full Stack
+summary: Portfolio personal de desarrollo web full stack, con proyectos, experiencia y habilidades en creación de software web y productos digitales.
 
 primary_skills:
-- SQL y modelado de datos
-- Dashboards y visualización (BI)
-- Limpieza/transformación de datos (ETL)
-- Desarrollo web (React / Next.js)
-- Integración de APIs y automatización
+- Desarrollo web full stack (React / Next.js)
+- Backend con Node.js, Express y Prisma
+- APIs, bases de datos y arquitectura web
+- Productos web en producción
+- Integración de servicios y automatización
 
 sections:
 - Home: https://ravettini.com/
@@ -29,4 +29,4 @@ notes:
 - Preferencia: respuestas claras, concretas y orientadas a impacto.
 - Este sitio es un portfolio personal.
 
-updated: 2026-02-19
+updated: 2026-06-25
