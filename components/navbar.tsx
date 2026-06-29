@@ -110,6 +110,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="/cv-ignacio-ravettini.pdf"
+            download="Ignacio Ravettini CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-2xl border border-white/10 bg-white/10 px-4 py-2 text-xs font-light tracking-tight text-white/90 backdrop-blur-sm hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30"
