@@ -1,73 +1,92 @@
-import { Section } from '@/components/ui/section';
-import { Container } from '@/components/ui/container';
-import { GlassCard } from '@/components/ui/glass-card';
-import { SectionReveal } from '@/components/ui/section-reveal';
-
-const skillGroups = [
+const groups = [
   {
-    label: 'Frontend',
+    title: "Interfaces",
+    description:
+      "Experiencias claras, adaptables y enfocadas en las personas que las usan.",
     skills: [
-      'HTML', 'CSS', 'Bootstrap', 'Tailwind', 'JS', 'TS', 'React', 'Next.js',
-      'jQuery', 'Responsive Design', 'Vite',
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "HTML / CSS",
+      "Tailwind",
+      "Bootstrap",
+      "jQuery",
+      "Vite",
+      "Responsive Design",
     ],
   },
   {
-    label: 'Backend / DB',
+    title: "Backend y datos",
+    description: "La estructura que conecta el producto con su operaci?n.",
     skills: [
-      'Node.js', 'Express', 'Prisma', 'SQL Server', 'MongoDB', 'PostgreSQL',
-      'APIs', 'CRUD', 'REST',
+      "Node.js",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+      "SQL Server",
+      "MongoDB",
+      "APIs REST",
+      "CRUD",
+      "An?lisis de datos",
     ],
   },
   {
-    label: 'Producto',
+    title: "Producto y automatizaci?n",
+    description:
+      "De la idea a producci?n, con procesos que pueden evolucionar.",
     skills: [
-      'Arquitectura web', 'Integraciones', 'Despliegue', 'Mantenimiento evolutivo',
-      'Documentación técnica',
-    ],
-  },
-  {
-    label: 'Educación / Comunicación',
-    skills: [
-      'Contenido didáctico', 'Currículas', 'Comunicación técnica', 'Mentoría',
-    ],
-  },
-  {
-    label: 'Soft',
-    skills: [
-      'Comunicación clara', 'Trabajo en equipo', 'Organización',
-      'Orientación a resultados', 'Mejora continua', 'Resolución de problemas',
+      "Arquitectura web",
+      "n8n",
+      "Integraciones",
+      "Despliegue",
+      "Mantenimiento evolutivo",
+      "Documentaci?n t?cnica",
+      "Contenido did?ctico",
+      "Curr?culas",
+      "Mentor?a",
+      "Comunicaci?n t?cnica",
+      "Trabajo en equipo",
+      "Organizaci?n",
+      "Mejora continua",
+      "Resoluci?n de problemas",
+      "Orientaci?n a resultados",
     ],
   },
 ];
-
 export function SkillsSection() {
   return (
-    <Section
-      id="habilidades"
-      title="Habilidades"
-      subtitle="Tecnologías y competencias con las que trabajo."
-    >
-      <Container>
-        <SectionReveal stagger staggerClass="flex flex-col gap-8">
-          {skillGroups.map((group) => (
-            <GlassCard key={group.label} className="p-6">
-              <h3 className="text-[10px] font-light uppercase tracking-[0.08em] text-white/50 mb-4">
-                {group.label}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {group.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-light text-white/80 backdrop-blur-sm transition-colors hover:border-white/20 hover:bg-white/[0.08]"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </GlassCard>
-          ))}
-        </SectionReveal>
-      </Container>
-    </Section>
+    <section id="habilidades" className="editorial-section shell">
+      <span id="especialidades" className="anchor-alias" />
+      <div className="section-heading" data-reveal>
+        <p className="eyebrow">03 / Capacidades</p>
+        <div>
+          <h2>
+            Del concepto
+            <br />
+            <span>al sistema.</span>
+          </h2>
+          <p>
+            Una mirada completa del producto.
+            <br />
+            Cada parte, conectada con la siguiente.
+          </p>
+        </div>
+      </div>
+      <div className="capabilities-grid">
+        {groups.map((group, index) => (
+          <article key={group.title} data-reveal>
+            <span className="capability-number">0{index + 1} ?</span>
+            <h3>{group.title}</h3>
+            <p>{group.description}</p>
+            <ul>
+              {group.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }

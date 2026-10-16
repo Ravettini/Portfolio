@@ -1,0 +1,17 @@
+{
+  "scope": "Full shareware episode, classic HUD, audio and fullscreen",
+  "verdict": "ship",
+  "validation": [
+    "TypeScript passed",
+    "Next production build passed",
+    "12 episode integration checks passed on production Chrome",
+    "HUD verified at DPR 1.25 and 2",
+    "Blocked audio unlock and original music/gunshot PCM verified",
+    "Five fullscreen cycles and Shift+Tab focus restoration passed",
+    "Scoped independent reviewer finding resolved"
+  ],
+  "limits": [
+    "Firefox not verified",
+    "Impeccable CLI plates gates remain pending; scoped verdict only"
+  ]
+}

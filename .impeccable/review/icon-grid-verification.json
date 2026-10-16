@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "Legacy overlapping positions become distinct valid slots at 1440x960",
+    "Occupied-cell placement never overlaps at 1440x960",
+    "Legacy overlapping positions become distinct valid slots at 1536x704",
+    "Occupied-cell placement never overlaps at 1536x704",
+    "Legacy overlapping positions become distinct valid slots at 1920x880",
+    "Occupied-cell placement never overlaps at 1920x880",
+    "Legacy overlapping positions become distinct valid slots at 901x580",
+    "Occupied-cell placement never overlaps at 901x580",
+    "Legacy overlapping positions become distinct valid slots at 901x300",
+    "Occupied-cell placement never overlaps at 901x300",
+    "Browser migrates old overlapping saved positions to unique slots",
+    "Dragging snaps to the grid instead of leaving arbitrary coordinates",
+    "Dragging moves the icon to another slot",
+    "Grid dragging does not launch the app",
+    "Dropping directly onto another icon chooses a free cell",
+    "Occupied icon remains in its own cell",
+    "Keyboard movement also uses collision-free slots",
+    "Alt-arrow moves by slots",
+    "Persisted layout contains only unique grid cells",
+    "Reload preserves the snapped layout without introducing collisions",
+    "Resizing repacks icons into valid non-overlapping cells",
+    "Normal click still launches application",
+    "No client runtime exceptions"
+  ],
+  "errors": []
+}

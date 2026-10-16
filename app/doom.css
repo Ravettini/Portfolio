@@ -1,0 +1,196 @@
+.os-window--doom {
+  width: min(850px, 78vw);
+  height: min(760px, calc(100dvh - 190px));
+  top: 8%;
+  right: 9%;
+}
+.os-window--doom .os-window-content {
+  padding: 0;
+  overflow: hidden;
+}
+.doom-app {
+  color: #f3eee5;
+  background: #171719;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.doom-app:fullscreen {
+  width: 100vw;
+  height: 100dvh;
+  max-height: none;
+}
+.doom-toolbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #252528;
+  color: #e4d6c0;
+  font-size: 12px;
+}
+.doom-toolbar > div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.doom-toolbar button {
+  min-height: 32px;
+  min-width: 32px;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+.doom-toolbar button:hover {
+  background: #444044;
+}
+.doom-app button:focus-visible,
+.doom-app a:focus-visible,
+.doom-file:focus-within {
+  outline: 2px solid #f2bc77;
+  outline-offset: 3px;
+}
+.doom-controls {
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 1.8;
+  padding: 12px 18px;
+  background: #302a25;
+  color: #f0dfc8;
+}
+.doom-stage {
+  position: relative;
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  background: #09090a;
+  display: grid;
+  place-items: center;
+}
+.doom-stage iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  position: absolute;
+  inset: 0;
+}
+.doom-intro {
+  max-width: 540px;
+  padding: 34px 28px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.doom-intro h2 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #f0bb77;
+}
+.doom-intro p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #e4d6c0;
+}
+.doom-intro small {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #bdb3a5;
+}
+.doom-file {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: #e7b67a;
+  color: #211810;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 7px;
+}
+.doom-file:hover {
+  background: #f0c794;
+}
+.doom-file input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.doom-intro .doom-error {
+  color: #ffb1a8;
+}
+.doom-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  text-align: center;
+  gap: 12px;
+  background: #171719;
+}
+.doom-overlay h2 {
+  font-size: 23px;
+}
+.doom-overlay p {
+  font-size: 13px;
+  color: #e4d6c0;
+}
+.doom-complete h2 {
+  font-size: 38px;
+}
+.doom-complete > div {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.doom-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 16px;
+  color: #bdb3a5;
+  font-size: 10px;
+  line-height: 1.6;
+  flex-shrink: 0;
+}
+.doom-footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.os-window--doom.os-window--maximized .doom-app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.os-window--doom.os-window--maximized .doom-stage {
+  flex: 1;
+  width: 100%;
+  max-height: none;
+  min-height: 0;
+  aspect-ratio: auto;
+}
+@media (max-width: 900px) {
+  .doom-stage {
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+  .doom-intro {
+    padding: 34px 22px;
+  }
+  .doom-intro h2 {
+    font-size: 43px;
+  }
+  .doom-footer {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

@@ -1,0 +1,887 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T18:03:53.200292+00:00",
+  "title": "Design System: ravettiniOS",
+  "extensions": {
+    "colorMeta": {
+      "action-blue": {
+        "role": "primary",
+        "displayName": "Action blue",
+        "tonalRamp": [
+          "oklch(15% 0.2355 262.12)",
+          "oklch(26% 0.2355 262.12)",
+          "oklch(38% 0.2355 262.12)",
+          "oklch(49% 0.2355 262.12)",
+          "oklch(61% 0.2355 262.12)",
+          "oklch(72% 0.2355 262.12)",
+          "oklch(84% 0.2355 262.12)",
+          "oklch(95% 0.2355 262.12)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Application surface",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "wallpaper-base": {
+        "role": "neutral",
+        "displayName": "Ocean desktop",
+        "tonalRamp": [
+          "oklch(15% 0.1055 263.35)",
+          "oklch(26% 0.1055 263.35)",
+          "oklch(38% 0.1055 263.35)",
+          "oklch(49% 0.1055 263.35)",
+          "oklch(61% 0.1055 263.35)",
+          "oklch(72% 0.1055 263.35)",
+          "oklch(84% 0.1055 263.35)",
+          "oklch(95% 0.1055 263.35)"
+        ]
+      },
+      "action-blue-hover": {
+        "role": "primary",
+        "displayName": "Action blue hover",
+        "tonalRamp": [
+          "oklch(15% 0.2126 262.17)",
+          "oklch(26% 0.2126 262.17)",
+          "oklch(38% 0.2126 262.17)",
+          "oklch(49% 0.2126 262.17)",
+          "oklch(61% 0.2126 262.17)",
+          "oklch(72% 0.2126 262.17)",
+          "oklch(84% 0.2126 262.17)",
+          "oklch(95% 0.2126 262.17)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0442 264.84)",
+          "oklch(26% 0.0442 264.84)",
+          "oklch(38% 0.0442 264.84)",
+          "oklch(49% 0.0442 264.84)",
+          "oklch(61% 0.0442 264.84)",
+          "oklch(72% 0.0442 264.84)",
+          "oklch(84% 0.0442 264.84)",
+          "oklch(95% 0.0442 264.84)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0425 266.28)",
+          "oklch(26% 0.0425 266.28)",
+          "oklch(38% 0.0425 266.28)",
+          "oklch(49% 0.0425 266.28)",
+          "oklch(61% 0.0425 266.28)",
+          "oklch(72% 0.0425 266.28)",
+          "oklch(84% 0.0425 266.28)",
+          "oklch(95% 0.0425 266.28)"
+        ]
+      },
+      "chrome": {
+        "role": "neutral",
+        "displayName": "Chrome",
+        "tonalRamp": [
+          "oklch(15% 0.0042 271.37)",
+          "oklch(26% 0.0042 271.37)",
+          "oklch(38% 0.0042 271.37)",
+          "oklch(49% 0.0042 271.37)",
+          "oklch(61% 0.0042 271.37)",
+          "oklch(72% 0.0042 271.37)",
+          "oklch(84% 0.0042 271.37)",
+          "oklch(95% 0.0042 271.37)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.0117 264.51)",
+          "oklch(26% 0.0117 264.51)",
+          "oklch(38% 0.0117 264.51)",
+          "oklch(49% 0.0117 264.51)",
+          "oklch(61% 0.0117 264.51)",
+          "oklch(72% 0.0117 264.51)",
+          "oklch(84% 0.0117 264.51)",
+          "oklch(95% 0.0117 264.51)"
+        ]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Soft",
+        "tonalRamp": [
+          "oklch(15% 0.0103 261.79)",
+          "oklch(26% 0.0103 261.79)",
+          "oklch(38% 0.0103 261.79)",
+          "oklch(49% 0.0103 261.79)",
+          "oklch(61% 0.0103 261.79)",
+          "oklch(72% 0.0103 261.79)",
+          "oklch(84% 0.0103 261.79)",
+          "oklch(95% 0.0103 261.79)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus",
+        "tonalRamp": [
+          "oklch(15% 0.1961 258.03)",
+          "oklch(26% 0.1961 258.03)",
+          "oklch(38% 0.1961 258.03)",
+          "oklch(49% 0.1961 258.03)",
+          "oklch(61% 0.1961 258.03)",
+          "oklch(72% 0.1961 258.03)",
+          "oklch(84% 0.1961 258.03)",
+          "oklch(95% 0.1961 258.03)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark ink",
+        "tonalRamp": [
+          "oklch(15% 0.0169 267.79)",
+          "oklch(26% 0.0169 267.79)",
+          "oklch(38% 0.0169 267.79)",
+          "oklch(49% 0.0169 267.79)",
+          "oklch(61% 0.0169 267.79)",
+          "oklch(72% 0.0169 267.79)",
+          "oklch(84% 0.0169 267.79)",
+          "oklch(95% 0.0169 267.79)"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Dark muted",
+        "tonalRamp": [
+          "oklch(15% 0.0387 262.11)",
+          "oklch(26% 0.0387 262.11)",
+          "oklch(38% 0.0387 262.11)",
+          "oklch(49% 0.0387 262.11)",
+          "oklch(61% 0.0387 262.11)",
+          "oklch(72% 0.0387 262.11)",
+          "oklch(84% 0.0387 262.11)",
+          "oklch(95% 0.0387 262.11)"
+        ]
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "displayName": "Dark surface",
+        "tonalRamp": [
+          "oklch(15% 0.0344 264.68)",
+          "oklch(26% 0.0344 264.68)",
+          "oklch(38% 0.0344 264.68)",
+          "oklch(49% 0.0344 264.68)",
+          "oklch(61% 0.0344 264.68)",
+          "oklch(72% 0.0344 264.68)",
+          "oklch(84% 0.0344 264.68)",
+          "oklch(95% 0.0344 264.68)"
+        ]
+      },
+      "dark-chrome": {
+        "role": "neutral",
+        "displayName": "Dark chrome",
+        "tonalRamp": [
+          "oklch(15% 0.0357 261.91)",
+          "oklch(26% 0.0357 261.91)",
+          "oklch(38% 0.0357 261.91)",
+          "oklch(49% 0.0357 261.91)",
+          "oklch(61% 0.0357 261.91)",
+          "oklch(72% 0.0357 261.91)",
+          "oklch(84% 0.0357 261.91)",
+          "oklch(95% 0.0357 261.91)"
+        ]
+      },
+      "dark-line": {
+        "role": "neutral",
+        "displayName": "Dark line",
+        "tonalRamp": [
+          "oklch(15% 0.0350 263.10)",
+          "oklch(26% 0.0350 263.10)",
+          "oklch(38% 0.0350 263.10)",
+          "oklch(49% 0.0350 263.10)",
+          "oklch(61% 0.0350 263.10)",
+          "oklch(72% 0.0350 263.10)",
+          "oklch(84% 0.0350 263.10)",
+          "oklch(95% 0.0350 263.10)"
+        ]
+      },
+      "dark-soft": {
+        "role": "neutral",
+        "displayName": "Dark soft",
+        "tonalRamp": [
+          "oklch(15% 0.0481 262.90)",
+          "oklch(26% 0.0481 262.90)",
+          "oklch(38% 0.0481 262.90)",
+          "oklch(49% 0.0481 262.90)",
+          "oklch(61% 0.0481 262.90)",
+          "oklch(72% 0.0481 262.90)",
+          "oklch(84% 0.0481 262.90)",
+          "oklch(95% 0.0481 262.90)"
+        ]
+      },
+      "boot-background": {
+        "role": "neutral",
+        "displayName": "Boot background",
+        "tonalRamp": [
+          "oklch(15% 0.0525 259.82)",
+          "oklch(26% 0.0525 259.82)",
+          "oklch(38% 0.0525 259.82)",
+          "oklch(49% 0.0525 259.82)",
+          "oklch(61% 0.0525 259.82)",
+          "oklch(72% 0.0525 259.82)",
+          "oklch(84% 0.0525 259.82)",
+          "oklch(95% 0.0525 259.82)"
+        ]
+      },
+      "boot-text": {
+        "role": "neutral",
+        "displayName": "Boot text",
+        "tonalRamp": [
+          "oklch(15% 0.0128 266.70)",
+          "oklch(26% 0.0128 266.70)",
+          "oklch(38% 0.0128 266.70)",
+          "oklch(49% 0.0128 266.70)",
+          "oklch(61% 0.0128 266.70)",
+          "oklch(72% 0.0128 266.70)",
+          "oklch(84% 0.0128 266.70)",
+          "oklch(95% 0.0128 266.70)"
+        ]
+      },
+      "boot-accent": {
+        "role": "neutral",
+        "displayName": "Boot accent",
+        "tonalRamp": [
+          "oklch(15% 0.1213 253.70)",
+          "oklch(26% 0.1213 253.70)",
+          "oklch(38% 0.1213 253.70)",
+          "oklch(49% 0.1213 253.70)",
+          "oklch(61% 0.1213 253.70)",
+          "oklch(72% 0.1213 253.70)",
+          "oklch(84% 0.1213 253.70)",
+          "oklch(95% 0.1213 253.70)"
+        ]
+      },
+      "boot-progress-track": {
+        "role": "neutral",
+        "displayName": "Boot progress track",
+        "tonalRamp": [
+          "oklch(15% 0.0627 260.94)",
+          "oklch(26% 0.0627 260.94)",
+          "oklch(38% 0.0627 260.94)",
+          "oklch(49% 0.0627 260.94)",
+          "oklch(61% 0.0627 260.94)",
+          "oklch(72% 0.0627 260.94)",
+          "oklch(84% 0.0627 260.94)",
+          "oklch(95% 0.0627 260.94)"
+        ]
+      },
+      "boot-progress-fill": {
+        "role": "neutral",
+        "displayName": "Boot progress fill",
+        "tonalRamp": [
+          "oklch(15% 0.0363 255.95)",
+          "oklch(26% 0.0363 255.95)",
+          "oklch(38% 0.0363 255.95)",
+          "oklch(49% 0.0363 255.95)",
+          "oklch(61% 0.0363 255.95)",
+          "oklch(72% 0.0363 255.95)",
+          "oklch(84% 0.0363 255.95)",
+          "oklch(95% 0.0363 255.95)"
+        ]
+      },
+      "boot-status": {
+        "role": "neutral",
+        "displayName": "Boot status",
+        "tonalRamp": [
+          "oklch(15% 0.0473 259.50)",
+          "oklch(26% 0.0473 259.50)",
+          "oklch(38% 0.0473 259.50)",
+          "oklch(49% 0.0473 259.50)",
+          "oklch(61% 0.0473 259.50)",
+          "oklch(72% 0.0473 259.50)",
+          "oklch(84% 0.0473 259.50)",
+          "oklch(95% 0.0473 259.50)"
+        ]
+      },
+      "boot-signature": {
+        "role": "neutral",
+        "displayName": "Boot signature",
+        "tonalRamp": [
+          "oklch(15% 0.0561 259.63)",
+          "oklch(26% 0.0561 259.63)",
+          "oklch(38% 0.0561 259.63)",
+          "oklch(49% 0.0561 259.63)",
+          "oklch(61% 0.0561 259.63)",
+          "oklch(72% 0.0561 259.63)",
+          "oklch(84% 0.0561 259.63)",
+          "oklch(95% 0.0561 259.63)"
+        ]
+      },
+      "session-focus": {
+        "role": "neutral",
+        "displayName": "Session focus",
+        "tonalRamp": [
+          "oklch(15% 0.0517 254.68)",
+          "oklch(26% 0.0517 254.68)",
+          "oklch(38% 0.0517 254.68)",
+          "oklch(49% 0.0517 254.68)",
+          "oklch(61% 0.0517 254.68)",
+          "oklch(72% 0.0517 254.68)",
+          "oklch(84% 0.0517 254.68)",
+          "oklch(95% 0.0517 254.68)"
+        ]
+      },
+      "login-overlay": {
+        "role": "neutral",
+        "displayName": "Login overlay",
+        "tonalRamp": [
+          "oklch(15% 0.0549 255.25)",
+          "oklch(26% 0.0549 255.25)",
+          "oklch(38% 0.0549 255.25)",
+          "oklch(49% 0.0549 255.25)",
+          "oklch(61% 0.0549 255.25)",
+          "oklch(72% 0.0549 255.25)",
+          "oklch(84% 0.0549 255.25)",
+          "oklch(95% 0.0549 255.25)"
+        ]
+      },
+      "login-topbar": {
+        "role": "neutral",
+        "displayName": "Login topbar",
+        "tonalRamp": [
+          "oklch(15% 0.0323 258.37)",
+          "oklch(26% 0.0323 258.37)",
+          "oklch(38% 0.0323 258.37)",
+          "oklch(49% 0.0323 258.37)",
+          "oklch(61% 0.0323 258.37)",
+          "oklch(72% 0.0323 258.37)",
+          "oklch(84% 0.0323 258.37)",
+          "oklch(95% 0.0323 258.37)"
+        ]
+      },
+      "login-date": {
+        "role": "neutral",
+        "displayName": "Login date",
+        "tonalRamp": [
+          "oklch(15% 0.0296 262.54)",
+          "oklch(26% 0.0296 262.54)",
+          "oklch(38% 0.0296 262.54)",
+          "oklch(49% 0.0296 262.54)",
+          "oklch(61% 0.0296 262.54)",
+          "oklch(72% 0.0296 262.54)",
+          "oklch(84% 0.0296 262.54)",
+          "oklch(95% 0.0296 262.54)"
+        ]
+      },
+      "login-intro": {
+        "role": "neutral",
+        "displayName": "Login intro",
+        "tonalRamp": [
+          "oklch(15% 0.0469 265.49)",
+          "oklch(26% 0.0469 265.49)",
+          "oklch(38% 0.0469 265.49)",
+          "oklch(49% 0.0469 265.49)",
+          "oklch(61% 0.0469 265.49)",
+          "oklch(72% 0.0469 265.49)",
+          "oklch(84% 0.0469 265.49)",
+          "oklch(95% 0.0469 265.49)"
+        ]
+      },
+      "login-avatar": {
+        "role": "neutral",
+        "displayName": "Login avatar",
+        "tonalRamp": [
+          "oklch(15% 0.0328 256.76)",
+          "oklch(26% 0.0328 256.76)",
+          "oklch(38% 0.0328 256.76)",
+          "oklch(49% 0.0328 256.76)",
+          "oklch(61% 0.0328 256.76)",
+          "oklch(72% 0.0328 256.76)",
+          "oklch(84% 0.0328 256.76)",
+          "oklch(95% 0.0328 256.76)"
+        ]
+      },
+      "login-avatar-ink": {
+        "role": "neutral",
+        "displayName": "Login avatar ink",
+        "tonalRamp": [
+          "oklch(15% 0.0153 257.20)",
+          "oklch(26% 0.0153 257.20)",
+          "oklch(38% 0.0153 257.20)",
+          "oklch(49% 0.0153 257.20)",
+          "oklch(61% 0.0153 257.20)",
+          "oklch(72% 0.0153 257.20)",
+          "oklch(84% 0.0153 257.20)",
+          "oklch(95% 0.0153 257.20)"
+        ]
+      },
+      "login-avatar-hover": {
+        "role": "neutral",
+        "displayName": "Login avatar hover",
+        "tonalRamp": [
+          "oklch(15% 0.0159 253.90)",
+          "oklch(26% 0.0159 253.90)",
+          "oklch(38% 0.0159 253.90)",
+          "oklch(49% 0.0159 253.90)",
+          "oklch(61% 0.0159 253.90)",
+          "oklch(72% 0.0159 253.90)",
+          "oklch(84% 0.0159 253.90)",
+          "oklch(95% 0.0159 253.90)"
+        ]
+      },
+      "login-description": {
+        "role": "neutral",
+        "displayName": "Login description",
+        "tonalRamp": [
+          "oklch(15% 0.0338 263.58)",
+          "oklch(26% 0.0338 263.58)",
+          "oklch(38% 0.0338 263.58)",
+          "oklch(49% 0.0338 263.58)",
+          "oklch(61% 0.0338 263.58)",
+          "oklch(72% 0.0338 263.58)",
+          "oklch(84% 0.0338 263.58)",
+          "oklch(95% 0.0338 263.58)"
+        ]
+      },
+      "login-enter": {
+        "role": "neutral",
+        "displayName": "Login enter",
+        "tonalRamp": [
+          "oklch(15% 0.0229 258.36)",
+          "oklch(26% 0.0229 258.36)",
+          "oklch(38% 0.0229 258.36)",
+          "oklch(49% 0.0229 258.36)",
+          "oklch(61% 0.0229 258.36)",
+          "oklch(72% 0.0229 258.36)",
+          "oklch(84% 0.0229 258.36)",
+          "oklch(95% 0.0229 258.36)"
+        ]
+      },
+      "immersive-dock": {
+        "role": "neutral",
+        "displayName": "Immersive dock",
+        "tonalRamp": [
+          "oklch(15% 0.0920 258)",
+          "oklch(26% 0.0920 258)",
+          "oklch(38% 0.0920 258)",
+          "oklch(49% 0.0920 258)",
+          "oklch(61% 0.0920 258)",
+          "oklch(72% 0.0920 258)",
+          "oklch(84% 0.0920 258)",
+          "oklch(95% 0.0920 258)"
+        ]
+      },
+      "dock-reveal-handle": {
+        "role": "neutral",
+        "displayName": "Dock reveal handle",
+        "tonalRamp": [
+          "oklch(15% 0.0390 264)",
+          "oklch(26% 0.0390 264)",
+          "oklch(38% 0.0390 264)",
+          "oklch(49% 0.0390 264)",
+          "oklch(61% 0.0390 264)",
+          "oklch(72% 0.0390 264)",
+          "oklch(84% 0.0390 264)",
+          "oklch(95% 0.0390 264)"
+        ]
+      },
+      "selection-fill": {
+        "role": "primary",
+        "displayName": "Marquee selection fill",
+        "tonalRamp": [
+          "oklch(15% 0.174 255)",
+          "oklch(26% 0.174 255)",
+          "oklch(38% 0.174 255)",
+          "oklch(49% 0.174 255)",
+          "oklch(61% 0.174 255)",
+          "oklch(72% 0.174 255)",
+          "oklch(84% 0.174 255)",
+          "oklch(95% 0.174 255)"
+        ]
+      },
+      "selection-border": {
+        "role": "primary",
+        "displayName": "Marquee selection border",
+        "tonalRamp": [
+          "oklch(15% 0.126 251)",
+          "oklch(26% 0.126 251)",
+          "oklch(38% 0.126 251)",
+          "oklch(49% 0.126 251)",
+          "oklch(61% 0.126 251)",
+          "oklch(72% 0.126 251)",
+          "oklch(84% 0.126 251)",
+          "oklch(95% 0.126 251)"
+        ]
+      },
+      "paint-green": {
+        "role": "secondary",
+        "displayName": "Paint green drawing color",
+        "tonalRamp": [
+          "oklch(15% 0.1388 161.40)",
+          "oklch(26% 0.1388 161.40)",
+          "oklch(38% 0.1388 161.40)",
+          "oklch(49% 0.1388 161.40)",
+          "oklch(61% 0.1388 161.40)",
+          "oklch(72% 0.1388 161.40)",
+          "oklch(84% 0.1388 161.40)",
+          "oklch(95% 0.1388 161.40)"
+        ]
+      },
+      "paint-amber": {
+        "role": "secondary",
+        "displayName": "Paint amber drawing color",
+        "tonalRamp": [
+          "oklch(15% 0.1538 74.35)",
+          "oklch(26% 0.1538 74.35)",
+          "oklch(38% 0.1538 74.35)",
+          "oklch(49% 0.1538 74.35)",
+          "oklch(61% 0.1538 74.35)",
+          "oklch(72% 0.1538 74.35)",
+          "oklch(84% 0.1538 74.35)",
+          "oklch(95% 0.1538 74.35)"
+        ]
+      },
+      "paint-coral": {
+        "role": "secondary",
+        "displayName": "Paint coral drawing color",
+        "tonalRamp": [
+          "oklch(15% 0.1894 14.96)",
+          "oklch(26% 0.1894 14.96)",
+          "oklch(38% 0.1894 14.96)",
+          "oklch(49% 0.1894 14.96)",
+          "oklch(61% 0.1894 14.96)",
+          "oklch(72% 0.1894 14.96)",
+          "oklch(84% 0.1894 14.96)",
+          "oklch(95% 0.1894 14.96)"
+        ]
+      },
+      "paint-violet": {
+        "role": "secondary",
+        "displayName": "Paint violet drawing color",
+        "tonalRamp": [
+          "oklch(15% 0.1868 297.39)",
+          "oklch(26% 0.1868 297.39)",
+          "oklch(38% 0.1868 297.39)",
+          "oklch(49% 0.1868 297.39)",
+          "oklch(61% 0.1868 297.39)",
+          "oklch(72% 0.1868 297.39)",
+          "oklch(84% 0.1868 297.39)",
+          "oklch(95% 0.1868 297.39)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Welcome heading",
+        "purpose": "Owner introduction in Notes."
+      },
+      "body": {
+        "displayName": "System body",
+        "purpose": "Desktop and case-page default."
+      },
+      "boot-monogram": {
+        "displayName": "Boot monogram",
+        "purpose": "Startup IR mark."
+      },
+      "boot-title": {
+        "displayName": "Boot title",
+        "purpose": "Startup system name."
+      },
+      "login-clock": {
+        "displayName": "Login clock",
+        "purpose": "Buenos Aires time with tabular numerals."
+      },
+      "login-heading": {
+        "displayName": "Login heading",
+        "purpose": "User selection and entry heading."
+      },
+      "login-user-name": {
+        "displayName": "Login user name",
+        "purpose": "Visitante label."
+      },
+      "maximized-project-title": {
+        "displayName": "Maximized project title",
+        "purpose": "28px title in desktop maximized project content."
+      },
+      "calculator-output": {
+        "displayName": "Calculator output",
+        "purpose": "Right-aligned calculator result with tabular numerals."
+      },
+      "utility-clock": {
+        "displayName": "Utility clock",
+        "purpose": "Buenos Aires time with seconds; 43px on mobile."
+      },
+      "stopwatch-output": {
+        "displayName": "Stopwatch output",
+        "purpose": "Elapsed stopwatch time; 38px on mobile."
+      },
+      "notepad-text": {
+        "displayName": "Notepad text",
+        "purpose": "Monospace editable notes at 13px/1.9."
+      }
+    },
+    "shadows": [
+      {
+        "name": "window",
+        "value": "0 24px 65px #00123655, 0 5px 18px #00123626",
+        "purpose": "Resting windows."
+      },
+      {
+        "name": "window-active",
+        "value": "0 30px 75px #00123665, 0 6px 20px #00123640",
+        "purpose": "Active window."
+      },
+      {
+        "name": "dock",
+        "value": "inset 0 0 0 1px #ffffff35, 0 10px 30px #00113430",
+        "purpose": "Utility dock."
+      },
+      {
+        "name": "search",
+        "value": "0 25px 90px #00113070",
+        "purpose": "Search dialog."
+      },
+      {
+        "name": "login-avatar",
+        "value": "inset 0 0 0 1px #edf5ff70, 0 12px 32px #00102c33",
+        "purpose": "Visitor avatar at rest; hover strengthens inset stroke to 2px #edf5ff9c."
+      }
+    ],
+    "motion": [
+      {
+        "name": "window-open",
+        "value": "0.28s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Opacity .75 to 1, translateY 8px to 0, scale .985 to 1."
+      },
+      {
+        "name": "dock-hover",
+        "value": "transform 0.22s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "TranslateY -7px and scale 1.08; disabled by reduced motion."
+      },
+      {
+        "name": "button",
+        "value": "background 0.15s, filter 0.15s",
+        "purpose": "Action feedback."
+      },
+      {
+        "name": "boot-load",
+        "value": "1700ms cubic-bezier(0.25, 0.1, 0.2, 1)",
+        "purpose": "Progress fill grows from scaleX .02 to 1; phase delay 1700ms or 100ms with reduced-motion preference, synchronized live from Settings."
+      },
+      {
+        "name": "session-arrival",
+        "value": "650ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Boot mark and desktop arrival; disabled by reduced motion."
+      },
+      {
+        "name": "login-arrival",
+        "value": "500ms ease-out",
+        "purpose": "Login opacity .5 to 1."
+      },
+      {
+        "name": "login-confirm",
+        "value": "650ms ease-out",
+        "purpose": "Entry opacity .3, scale 1.025, blur 2px; entering phase delay 650ms or reduced 100ms."
+      },
+      {
+        "name": "login-spinner",
+        "value": "900ms linear infinite",
+        "purpose": "Entry status indicator rotates; disabled by reduced motion."
+      },
+      {
+        "name": "login-avatar",
+        "value": "background 150ms ease, box-shadow 150ms ease",
+        "purpose": "Visitor hover and focus feedback."
+      },
+      {
+        "name": "dock-reveal",
+        "value": "transform 220ms cubic-bezier(0.16, 1, 0.3, 1), opacity 160ms ease",
+        "purpose": "Immersive dock reveal. Hidden translateY calc(100% + 30px); revealed translateY 0. Reduced motion disables transitions."
+      },
+      {
+        "name": "dock-hide-delay",
+        "value": "450ms after pointer leave; 2500ms fallback",
+        "purpose": "JavaScript reveal timers; entering dock cancels fallback."
+      },
+      {
+        "name": "dock-tooltip-dwell",
+        "value": "3000ms",
+        "purpose": "JavaScript pointer dwell, unchanged by reduced motion; pointer leave clears immediately and keyboard focus-visible reveals immediately."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-sheet",
+        "value": "900px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1200px"
+      },
+      {
+        "name": "short-desktop-height",
+        "value": "800px"
+      },
+      {
+        "name": "compact-login",
+        "value": "600px"
+      },
+      {
+        "name": "short-login-height",
+        "value": "650px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary button extracted from app/os.css.",
+      "html": "<button class=\"ds-primary\">Escribir un email</button>",
+      "css": ".ds-primary{font-family:-apple-system,BlinkMacSystemFont,sans-serif;border:0;cursor:pointer;display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  gap: 7px;\n  font-size: 11px !important;\n  font-weight: 500 !important;\n  padding: 9px 13px;\n  min-height: 34px;\n  line-height: 1.35;\n  border-radius: 6px;\n  background: var(--os-soft,#edf1f8);\n  color: var(--os-ink,#182238) !important;\n  text-align: center;\n  transition:\n    background 0.15s,\n    filter 0.15s;color: #fff !important;\n  background: var(--os-blue,#0757ed);\n  box-shadow: 0 3px 8px #0757ed1a;}.ds-primary:hover{background: #064bcf;\n  filter: none;}.ds-primary:focus-visible{outline:3px solid #3287ff;outline-offset:4px;}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary button extracted from app/os.css.",
+      "html": "<button class=\"ds-secondary\">Copiar email</button>",
+      "css": ".ds-secondary{font-family:-apple-system,BlinkMacSystemFont,sans-serif;border:0;cursor:pointer;display: inline-flex;\n  justify-content: center;\n  align-items: center;\n  gap: 7px;\n  font-size: 11px !important;\n  font-weight: 500 !important;\n  padding: 9px 13px;\n  min-height: 34px;\n  line-height: 1.35;\n  border-radius: 6px;\n  background: var(--os-soft,#edf1f8);\n  color: var(--os-ink,#182238) !important;\n  text-align: center;\n  transition:\n    background 0.15s,\n    filter 0.15s;}.ds-secondary:hover{filter:brightness(.95)}.ds-secondary:focus-visible{outline:3px solid #3287ff;outline-offset:4px;}"
+    },
+    {
+      "name": "Project launcher",
+      "kind": "custom",
+      "refersTo": "app-icon",
+      "description": "48px semantic launcher icon, used by nine projects and the Utilidades folder. After a 6px threshold, held drag follows the pointer freely in a temporary preview with opacity .85; positions and storage commit to free grid slots only on release. Cancellation/Escape discards preview. Ctrl/Cmd-click or Ctrl/Cmd-Space toggles selection; background marquee selects intersecting 94px targets. Dragging a selected icon moves the group, keeping formation when free space allows. Alt+arrows moves one slot or three with Shift. Preview shows resting appearance.",
+      "html": "<button class=\"ds-launcher\"><span class=\"ds-icon\"><svg width=\"29\" height=\"29\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 7V4H6l6 8-6 8h12v-3\"/></svg></span><span class=\"ds-label\">SIGMA</span></button>",
+      "css": ".ds-launcher{font-family:-apple-system,BlinkMacSystemFont,sans-serif;cursor:pointer;border:0;width: 94px;\n  height: 94px;\n  background: transparent;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 7px;\n  border-radius: 7px;\n  padding: 5px 2px;\n  color: #fff !important;\n  text-align: center;\n  user-select: none;}.ds-launcher:hover{background:#ffffff12}.ds-launcher:focus-visible{outline:3px solid #3287ff;outline-offset:4px;}.ds-launcher:active .ds-icon{filter:brightness(.8)}.ds-icon{filter: brightness(0.8);--icon-top:#b67aff;--icon-bottom:#6136df}.ds-label{max-width: 94px;\n  font-size: 11px;\n  font-weight: 500;\n  line-height: 1.35;\n  text-shadow: 0 1px 4px #000a;}"
+    },
+    {
+      "name": "Technology chip",
+      "kind": "chip",
+      "refersTo": "technology-chip",
+      "description": "Technology chip extracted from app/os.css.",
+      "html": "<span class=\"ds-chip\">Next.js</span>",
+      "css": ".ds-chip{font-family:-apple-system,BlinkMacSystemFont,sans-serif;display:inline-block;line-height:1.55;font-size: 9px;\n  color: var(--os-muted,#56617a);\n  padding: 3px 7px;\n  background: var(--os-soft,#edf1f8);\n  border-radius: 4px;}"
+    },
+    {
+      "name": "Application window",
+      "kind": "card",
+      "refersTo": "window",
+      "description": "Application window extracted from app/os.css.",
+      "html": "<section class=\"ds-window\"><header class=\"ds-bar\"><button class=\"ds-close\" aria-label=\"Cerrar\"></button><span>Notas</span></header><div class=\"ds-content\">Ignacio Ravettini Novellino</div></section>",
+      "css": ".ds-window{font-family:-apple-system,BlinkMacSystemFont,sans-serif;border-radius:12px;background:var(--os-surface,#fafafa);color:var(--os-ink,#182238);overflow:hidden;box-shadow:0 24px 65px #00123655,0 5px 18px #00123626}.ds-bar{display:flex;align-items:center;gap:18px;height:42px;padding:0 14px;background:var(--os-chrome,#eeeff2);font-size:11px;font-weight:600}.ds-close{position:relative;display:grid;place-items:center;width:24px;height:28px;padding:0;border:0;border-radius:6px;background:transparent;cursor:pointer}.ds-close:before{content:\"\";width:12px;height:12px;border-radius:50%;background:#ff6059;box-shadow:inset 0 0 0 1px #0000000f}.ds-close:focus-visible{outline:3px solid #3287ff;outline-offset:4px;}.ds-content{padding:23px 30px;font-size:13px;line-height:1.55}"
+    },
+    {
+      "name": "Search input",
+      "kind": "input",
+      "refersTo": "window",
+      "description": "Search input extracted from app/os.css.",
+      "html": "<div class=\"ds-search\"><input aria-label=\"Buscar aplicaciones\" placeholder=\"Buscar proyectos y aplicaciones\"/></div>",
+      "css": ".ds-search{display:flex;align-items:center;gap:14px;padding:17px 20px;background:var(--os-surface,#fafafa);color:var(--os-ink,#182238);border-bottom:1px solid var(--os-line,#dce0e8)}.ds-search input{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:17px;color:inherit;background:transparent;border:0;outline:none;width:100%;min-width:0;caret-color:var(--os-blue,#0757ed)}.ds-search input::placeholder{color:var(--os-muted,#56617a);opacity:1}"
+    },
+    {
+      "name": "Menu item",
+      "kind": "nav",
+      "refersTo": "button-secondary",
+      "description": "Menu item extracted from app/os.css.",
+      "html": "<nav class=\"ds-menu\" aria-label=\"Aplicaciones\"><button>Contacto</button></nav>",
+      "css": ".ds-menu{width:250px;padding:6px;background:var(--os-surface,#fafafa);border-radius:9px;box-shadow:0 12px 35px #020b2b50}.ds-menu button{font-family:-apple-system,BlinkMacSystemFont,sans-serif;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;padding:8px 10px;text-align:left;border:0;border-radius:5px;background:transparent;color:var(--os-ink,#182238);font-size:12px}.ds-menu button:hover{background:var(--os-blue,#0757ed);color:#fff}.ds-menu button:focus-visible{outline:3px solid #3287ff;outline-offset:4px;}"
+    },
+    {
+      "name": "Visitor selection",
+      "kind": "button",
+      "refersTo": "login-user",
+      "description": "Single password-free visitor choice over the blue login wallpaper.",
+      "html": "<button class=\"ds-visitor\" aria-label=\"Entrar como visitante\"><span class=\"ds-avatar\"><svg width=\"43\" height=\"43\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/></svg></span><span class=\"ds-visitor-name\">Visitante</span><span class=\"ds-visitor-description\">Proyectos, ideas y un poco de código.</span><span class=\"ds-enter\">Entrar al escritorio</span></button>",
+      "css": ".ds-visitor{font-family:-apple-system,BlinkMacSystemFont,sans-serif;color:#f2f6ff;border:0;cursor:pointer;display: flex;\n  flex-direction: column;\n  align-items: center;\n  background: transparent;\n  margin: auto;\n  padding: 10px 26px;\n  border-radius: 15px;}.ds-avatar{background: #edf5ff3b;\n  box-shadow:\n    inset 0 0 0 2px #edf5ff9c,\n    0 12px 32px #00102c33;}.ds-visitor:hover .ds-avatar,.ds-visitor:focus-visible .ds-avatar{background:#edf5ff3b;box-shadow:inset 0 0 0 2px #edf5ff9c,0 12px 32px #00102c33}.ds-visitor:focus-visible{outline:2px solid #c6dfff;outline-offset:7px;border-radius:7px}.ds-visitor:disabled{cursor:default}.ds-visitor-name{font-size: 16px;\n  font-weight: 600;\n  margin-top: 14px;}.ds-visitor-description{font-size: 11px;\n  color: #dce8ff;\n  margin-top: 6px;}.ds-enter{display: flex;\n  align-items: center;\n  gap: 11px;\n  background: #e6f0ff20;\n  padding: 10px 17px;\n  border-radius: 7px;\n  margin-top: 22px;\n  font-size: 12px;\n  min-height: 38px;}@media(max-height:650px){.ds-avatar{width:63px;height:63px}.ds-enter{margin-top:10px}}@media(prefers-reduced-motion:reduce){.ds-avatar{transition:none}}"
+    },
+    {
+      "name": "Boot progress",
+      "kind": "custom",
+      "refersTo": "boot-progress",
+      "description": "Decorative progress fill accompanies the announced startup status.",
+      "html": "<div class=\"ds-boot\"><span class=\"ds-monogram\" aria-hidden=\"true\">IR<span>.</span></span><div class=\"ds-progress\" aria-hidden=\"true\"><span></span></div><p role=\"status\">Iniciando tu espacio de trabajo...</p></div>",
+      "css": ".ds-boot{font-family:-apple-system,BlinkMacSystemFont,sans-serif;display:flex;flex-direction:column;align-items:center;background:#06142c;color:#f2f6ff;padding:32px}.ds-monogram{font-size: 83px;\n  font-weight: 700;\n  letter-spacing: -0.04em;\n  line-height: 1;}.ds-monogram>span{color:#7bb7ff}.ds-progress{width: 166px;\n  height: 3px;\n  overflow: hidden;\n  background: #293c5d;\n  border-radius: 3px;margin-top:37px}.ds-progress>span{display: block;\n  height: 100%;\n  background: #d7e8ff;\n  transform-origin: left;\n  animation: ds-boot-load 1700ms cubic-bezier(0.25, 0.1, 0.2, 1) both;}.ds-boot p{margin-top: 16px;\n  color: #b0c3e1;\n  font-size: 11px;}@keyframes ds-boot-load{from{transform:scaleX(.02)}to{transform:scaleX(1)}}@media(prefers-reduced-motion:reduce){.ds-progress>span{animation:none}}"
+    },
+    {
+      "name": "Immersive dock",
+      "kind": "nav",
+      "refersTo": "immersive-dock",
+      "description": "Revealed dock appearance when a visible window is maximized. Application JavaScript handles edge reveal, 450/2500ms hiding and 3000ms pointer tooltip dwell; keyboard focus reveals immediately.",
+      "html": "<nav class=\"ds-immersive-dock\" aria-label=\"Aplicaciones del sistema\"><button class=\"ds-dock-app\" aria-label=\"Abrir Contacto\"><span class=\"ds-dock-icon\"><svg width=\"29\" height=\"29\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.65\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M22 2 7 9l6 2 2 6 7-15Z\"/><path d=\"m7 9-5 2 11 2 2 9 2-5\"/></svg></span><span class=\"ds-dock-tooltip\">Contacto</span><span class=\"ds-dock-label\">Contacto</span></button></nav>",
+      "css": ".ds-immersive-dock{display:inline-flex;align-items:center;gap:17px;padding:13px 18px 8px;border-radius:19px;background:#15386be6;backdrop-filter:blur(25px) saturate(150%);box-shadow:inset 0 0 0 1px #ffffff35,0 10px 30px #00113430;height:91px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}.ds-dock-app{position:relative;background:transparent;border:0;padding:0;display:flex;flex-direction:column;align-items:center;min-width:57px;gap:5px;color:#fff;cursor:pointer}.ds-dock-icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;background:linear-gradient(150deg,#239bff,#0454e8);box-shadow:inset 0 1px 1px #ffffff70,inset 0 -1px 2px #0002,0 4px 7px #00113b30;transition:transform .22s cubic-bezier(.16,1,.3,1)}.ds-dock-app:hover .ds-dock-icon{transform:translateY(-7px) scale(1.08)}.ds-dock-label{font-size:9px;text-shadow:0 1px 3px #001536}.ds-dock-tooltip{position:absolute;bottom:78px;opacity:0;pointer-events:none;font-size:11px;color:var(--os-ink,#182238);padding:5px 10px;background:var(--os-surface,#fafafa);border-radius:5px;white-space:nowrap;box-shadow:0 4px 12px #00133630}.ds-dock-app:focus-visible{outline:3px solid #3287ff;outline-offset:4px;border-radius:5px}.ds-dock-app:focus-visible .ds-dock-tooltip{opacity:1}@media(prefers-reduced-motion:reduce){.ds-dock-icon{transition:none}.ds-dock-app:hover .ds-dock-icon{transform:none}}"
+    },
+    {
+      "name": "Desktop selection marquee",
+      "kind": "custom",
+      "refersTo": "selection-box",
+      "description": "Blue rectangle drawn on empty-desktop left-pointer drag; intersects launcher targets to select them. The rectangle itself never intercepts pointer events.",
+      "html": "<div class=\"ds-selection-box\" aria-hidden=\"true\"></div>",
+      "css": ".ds-selection-box{position:relative;width:180px;height:110px;z-index:10;pointer-events:none;background:#2b85ef35;border:1px solid #70b5ff}"
+    },
+    {
+      "name": "Calculator keys",
+      "kind": "button",
+      "refersTo": "calculator-key",
+      "description": "Neutral digit keys and primary-blue equals key in the four-column calculator keypad; 48px high on desktop and 56px on mobile.",
+      "html": "<div class=\"ds-calc-keys\"><button>7</button><button>8</button><button>9</button><button class=\"ds-calc-operator\" aria-label=\"Sumar\">+</button><button>0</button><button aria-label=\"Separador decimal\">,</button><button aria-label=\"Borrar todo\">AC</button><button class=\"ds-calc-equals\" aria-label=\"Igual\">=</button></div>",
+      "css": ".ds-calc-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:288px}.ds-calc-keys button{font-family:-apple-system,BlinkMacSystemFont,sans-serif;border:0;cursor:pointer;height:48px;border-radius:8px;background:var(--os-soft,#edf1f8);color:var(--os-ink,#182238);font-size:20px;font-weight:400}.ds-calc-keys button:hover{filter:brightness(.95)}.ds-calc-keys button:active{filter:brightness(.87)}.ds-calc-keys button:focus-visible{outline:3px solid #3287ff;outline-offset:4px;border-radius:5px}.ds-calc-keys .ds-calc-operator{color:var(--os-blue,#0757ed)}.ds-calc-keys .ds-calc-equals{background:var(--os-blue,#0757ed);color:#fff}@media(max-width:900px){.ds-calc-keys button{height:56px}}"
+    },
+    {
+      "name": "Notepad editor",
+      "kind": "input",
+      "refersTo": "notepad-editor",
+      "description": "Local notes editor with monospace text and inset focus outline. Application code handles debounce, unmount flush and TXT download.",
+      "html": "<textarea class=\"ds-notepad\" aria-label=\"Contenido del bloc de notas\" placeholder=\"Una idea, un recordatorio, el comienzo de algo...\"></textarea>",
+      "css": ".ds-notepad{display:block;resize:vertical;width:100%;min-height:310px;padding:23px;font:13px/1.9 ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--os-ink,#182238);background:var(--os-surface,#fafafa);border:0;outline:none;caret-color:var(--os-blue,#0757ed)}.ds-notepad::placeholder{color:var(--os-muted,#56617a);opacity:1}.ds-notepad:focus-visible{outline:2px solid var(--os-blue,#0757ed);outline-offset:-3px}@media(max-width:900px){.ds-notepad{padding:20px 16px;min-height:350px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The personal desktop",
+    "overview": "The portfolio is a clean, explorable desktop inspired by macOS. Ocean-blue folded waves provide room around compact project applications and softly elevated windows. The user explicitly replaced the earlier editorial direction in `idea.md`; the approved reference is `.impeccable/mocks/desktop-apps-small.png`.\n\nReal project screenshots, semantic vector pictograms and native-style controls carry the experience. The interface stays compact while keeping projects, professional information, CV and contact accessible through windows, search and the dock.\n\nA brief first-PC-style boot sequence leads to a password-free Visitante selection before the desktop. It extends the same blue world with a dark startup surface, a pale monogram and a blurred version of the existing ocean wallpaper. Returning within the same browser tab resumes the desktop.",
+    "keyCharacteristics": [
+      "Ocean-blue wallpaper and light application surfaces.",
+      "Compact project launchers with meaningful icons.",
+      "Independent windows with familiar title bars and traffic-light controls.",
+      "Responsive sheets and visible keyboard focus.",
+      "A short boot sequence and one clear visitor entry point."
+    ],
+    "rules": [],
+    "dos": [
+      "**Do** preserve the approved compact desktop metaphor and meaningful application icons.",
+      "**Do** use the existing project data and real screenshots.",
+      "**Do** keep visible focus, labeled controls and reduced-motion behavior.",
+      "**Do** use three launcher columns and fixed application sheets on mobile."
+    ],
+    "donts": [
+      "**Don't** restore the superseded editorial direction from `idea.md`.",
+      "**Don't** invent clients, experience, metrics or project previews.",
+      "**Don't** make minimized windows lose their local state."
+    ]
+  }
+}

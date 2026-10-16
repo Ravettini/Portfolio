@@ -1,0 +1,23 @@
+{
+  "checks": [
+    "Desktop is inert during startup",
+    "Boot transitions to user selection",
+    "Visitor entry needs no password",
+    "Inactive welcome closes on the first pointer click (original reported bug)",
+    "Inactive project closes on the first click with another app in front",
+    "Keyboard Enter closes a window",
+    "Switching user and returning preserves open apps",
+    "Reload resumes the tab session",
+    "Restart replays boot animation",
+    "Boot animation can be skipped",
+    "Restart resets the desktop session",
+    "Case-study return resumes session and respects project anchor",
+    "In-app reduced-motion preference updates startup immediately",
+    "Restart honors reduced motion without reloading",
+    "User selection fits mobile width",
+    "Reduced motion is respected at startup",
+    "Touch closes project on first tap",
+    "No client runtime exceptions in boot, login or window controls"
+  ],
+  "errors": []
+}

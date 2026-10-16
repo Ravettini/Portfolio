@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "AudioContext runs after user activation",
+    "Music produces nonzero output PCM",
+    "Classic HUD view configured with health",
+    "Increasing screen size cannot hide HUD",
+    "Fullscreen button uses real browser fullscreen",
+    "Fullscreen retains 4:3 image and HUD",
+    "Fullscreen exits cleanly",
+    "E1M2 now loads instead of being forced to Hangar",
+    "Secret E1M9 is available",
+    "Real exit switch and original intermission progress to E1M2",
+    "No custom first-level completion screen",
+    "No runtime errors"
+  ],
+  "errors": []
+}

@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "No game data at desktop entry",
+    "Opening DOOM automatically starts and focuses original E1M1",
+    "No file selector",
+    "Shareware loaded automatically from same origin",
+    "Keyboard fires without extra click in game",
+    "Restart reuses the bundled WAD",
+    "Failed WAD fetch shows error without starting runtime",
+    "Retry recovers automatic loading",
+    "Touch mobile avoids WAD and engine download",
+    "No runtime errors"
+  ],
+  "errors": []
+}

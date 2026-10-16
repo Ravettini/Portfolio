@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import "./os.css";
+import "./boot.css";
+import "./utilities.css";
+import "./doom.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
@@ -42,8 +46,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${plusJakarta.variable} font-sans min-h-screen w-full min-w-full bg-[#05070a] text-white/90 antialiased`}>
-        <div className="noise-overlay" aria-hidden />
+      <body
+        className={`${plusJakarta.variable} font-sans min-h-screen w-full min-w-full bg-[#05070a] text-white/90 antialiased`}
+      >
         <div className="relative z-10">{children}</div>
       </body>
     </html>

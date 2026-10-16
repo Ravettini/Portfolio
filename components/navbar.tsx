@@ -1,151 +1,112 @@
-'use client';
-
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
-
-const navLinks = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#sobre-mi', label: 'Sobre mí' },
-  { href: '#especialidades', label: 'Especialidades' },
-  { href: '#experiencia', label: 'Experiencia' },
-  { href: '#proyectos', label: 'Proyectos' },
-  { href: '#habilidades', label: 'Habilidades' },
-  { href: '#contacto', label: 'Contacto' },
+"use client";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+const links = [
+  ["inicio", "Inicio"],
+  ["proyectos", "Proyectos"],
+  ["sobre-mi", "Perfil"],
+  ["contacto", "Contacto"],
 ];
-
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeId, setActiveId] = useState<string | null>(null);
-
+  const [open, setOpen] = useState(false);
+  const button = useRef<HTMLButtonElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const prefix = pathname === "/" ? "" : "/";
   useEffect(() => {
-    const sectionIds = navLinks.map((l) => l.href.slice(1)).filter(Boolean);
-    const sectionElements = sectionIds
-      .map((id) => ({ id, el: document.getElementById(id) }))
-      .filter((item): item is { id: string; el: HTMLElement } => !!item.el);
-
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(() => {
-        const scrollY = window.scrollY;
-        setScrolled(scrollY > 20);
-
-        const viewportMid = scrollY + window.innerHeight / 2;
-        let current: string | null = null;
-
-        for (const { id, el } of sectionElements) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (viewportMid >= top && viewportMid < top + height) {
-            current = id;
-            break;
-          }
-          if (top > viewportMid) break;
-          current = id;
+    if (!open) return;
+    panel.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+    const close = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        button.current?.focus();
+      }
+      if (event.key === "Tab") {
+        const items = [
+          button.current,
+          ...Array.from(
+            panel.current?.querySelectorAll<HTMLAnchorElement>("a") || [],
+          ),
+        ].filter(Boolean) as HTMLElement[];
+        const first = items[0],
+          last = items[items.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
         }
-
-        setActiveId(current);
-        ticking = false;
-      });
+      }
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
+    const narrow = window.matchMedia("(max-width: 767px)");
+    const resize = () => {
+      if (!narrow.matches) setOpen(false);
+    };
+    narrow.addEventListener("change", resize);
+    document.addEventListener("keydown", close);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener("keydown", close);
+      narrow.removeEventListener("change", resize);
     };
-  }, []);
-
+  }, [open]);
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled
-          ? 'border-b border-white/10 bg-[#05070a]/80 backdrop-blur-md'
-          : 'bg-transparent'
-      )}
-    >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 lg:px-16">
-        <Link
-          href="#inicio"
-          className="flex items-center gap-2 text-sm font-light tracking-tight text-white/90 hover:text-white transition-colors"
-        >
-          <Image
-            src="/dibujos_rana/logo.png"
-            alt=""
-            width={26}
-            height={26}
-            className="h-[26px] w-auto"
-          />
-          <span>Ignacio R. N.</span>
-        </Link>
-
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => {
-            const id = link.href.slice(1);
-            const isActive = activeId === id;
-            return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    'text-xs font-light tracking-tight transition-colors',
-                    isActive ? 'text-white/90' : 'text-white/70 hover:text-white/90'
-                  )}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-
-        <div className="flex items-center gap-3">
-          <a
-            href="/cv-ignacio-ravettini.pdf"
-            download="Ignacio Ravettini CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl border border-white/10 bg-white/10 px-4 py-2 text-xs font-light tracking-tight text-white/90 backdrop-blur-sm hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30"
+    <>
+      <a className="skip-link" href="#main">
+        Ir al contenido
+      </a>
+      <header className="editorial-nav">
+        <div className="shell nav-inner">
+          <Link
+            className="wordmark"
+            href="/"
+            aria-label="Ignacio Ravettini, inicio"
           >
-            Descargar CV
+            ir<span>.</span>
+          </Link>
+          <nav className="desktop-nav" aria-label="Principal">
+            {links.map(([id, label]) => (
+              <Link href={prefix + "#" + id} key={id}>
+                {label}
+              </Link>
+            ))}
+          </nav>
+          <a className="nav-contact" href="mailto:ignaciorave21@gmail.com">
+            Conectemos <ArrowUpRight size={14} />
           </a>
-
           <button
-            type="button"
-            aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
-            className="md:hidden p-2 text-white/80 hover:text-white"
-            onClick={() => setMobileOpen(!mobileOpen)}
+            ref={button}
+            className="menu-button"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Cerrar men?" : "Abrir men?"}
+            onClick={() => setOpen(!open)}
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {open ? <X /> : <Menu />}
           </button>
         </div>
-      </nav>
-
-      {mobileOpen && (
-        <div className="md:hidden border-t border-white/10 bg-[#0b0f14]/95 backdrop-blur-md px-6 py-4">
-          <ul className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
+        {open && (
+          <div ref={panel} id="mobile-nav" className="mobile-nav">
+            <nav aria-label="Principal m?vil">
+              {links.map(([id, label]) => (
                 <Link
-                  href={link.href}
-                  className="block text-sm font-light text-white/80 hover:text-white"
-                  onClick={() => setMobileOpen(false)}
+                  href={prefix + "#" + id}
+                  key={id}
+                  onClick={() => {
+                    setOpen(false);
+                    button.current?.focus();
+                  }}
                 >
-                  {link.label}
+                  {label}
+                  <ArrowUpRight />
                 </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </header>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header>
+    </>
   );
 }

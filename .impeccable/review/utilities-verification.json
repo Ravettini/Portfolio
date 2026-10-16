@@ -1,0 +1,25 @@
+{
+  "checks": [
+    "Four working utility launchers",
+    "Calculator keyboard and arithmetic",
+    "Decimal precision",
+    "Division by zero handled",
+    "Paint draws on canvas",
+    "Paint undo",
+    "Paint redo",
+    "Paint PNG download",
+    "Notes survive immediate close",
+    "Stopwatch records laps",
+    "Stopwatch pauses",
+    "Stopwatch reset",
+    "Utilities mobile page fits",
+    "Paint opens on mobile",
+    "Paint fits mobile window",
+    "Calculadora opens on mobile",
+    "Calculadora fits mobile window",
+    "Bloc de notas opens on mobile",
+    "Bloc de notas fits mobile window",
+    "No browser runtime errors"
+  ],
+  "errors": []
+}

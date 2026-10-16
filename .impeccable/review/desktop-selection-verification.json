@@ -1,0 +1,27 @@
+{
+  "checks": [
+    "Held icon follows pointer freely before snapping",
+    "Unsnapped preview is not persisted",
+    "Icon snaps to grid only on release",
+    "Drag release does not launch app",
+    "Dragging desktop background draws a blue selection rectangle",
+    "Selection rectangle disappears on release",
+    "Rectangle selects multiple intersecting icons",
+    "Selected icons expose their selection state",
+    "Selected icons follow the pointer together",
+    "Group drop moves all selected icons to new cells",
+    "Group drop retains relative arrangement when space permits",
+    "Group drop does not overlap any icon",
+    "All committed icons remain on the grid",
+    "Ctrl-click adds an icon to the selection",
+    "Ctrl-click does not open the app",
+    "Ctrl-click removes a selected icon",
+    "Ctrl-Space supports keyboard multiselection",
+    "Escape clears the selection",
+    "Escape cancels an in-progress drag without saving its preview",
+    "Empty rectangle clears selection",
+    "Normal single click still opens an app",
+    "No runtime exceptions"
+  ],
+  "errors": []
+}

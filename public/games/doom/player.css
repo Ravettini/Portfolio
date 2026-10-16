@@ -1,0 +1,7 @@
+html,body { margin:0;width:100%;height:100%;overflow:hidden;background:#09090a; }
+body { display:flex;align-items:center;justify-content:center; }
+canvas { display:block;width:min(100vw,133.333vh);height:min(75vw,100vh);object-fit:contain;image-rendering:pixelated;outline:none; }
+canvas:focus-visible { outline:2px solid #f0bb77;outline-offset:-2px; }
+#enable-audio { position:fixed;right:16px;top:16px;padding:12px 18px;border:0;border-radius:7px;background:#e7b67a;color:#211810;font:600 14px system-ui;cursor:pointer;box-shadow:0 4px 16px #0008; }
+#enable-audio[hidden] { display:none; }
+#enable-audio:focus-visible { outline:2px solid #fff;outline-offset:3px; }

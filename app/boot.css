@@ -1,0 +1,395 @@
+.os-session {
+  min-height: 100svh;
+  background: #06142c;
+  font-family: -apple-system, BlinkMacSystemFont, var(--font-sans), sans-serif;
+}
+.os-session-desktop {
+  min-height: 100svh;
+}
+.os-session:not([data-phase="desktop"]) .os-session-desktop {
+  visibility: hidden;
+  height: 100svh;
+  overflow: hidden;
+}
+.os-session[data-phase="desktop"] .os-desktop {
+  animation: desktop-arrival 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.os-session .os-desktop:focus {
+  outline: none;
+}
+.os-boot,
+.os-login {
+  position: fixed;
+  z-index: 400;
+  inset: 0;
+  min-height: 100svh;
+  overflow: auto;
+  color: #f2f6ff;
+  isolation: isolate;
+}
+.os-boot button,
+.os-login button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  color: inherit;
+}
+.os-boot :focus-visible,
+.os-login :focus-visible {
+  outline: 2px solid #c6dfff;
+  outline-offset: 7px;
+  border-radius: 7px;
+}
+.os-boot {
+  display: grid;
+  place-items: center;
+  background: #06142c;
+}
+.boot-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 45px;
+  animation: boot-mark-arrival 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.boot-monogram {
+  font-size: 83px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.boot-monogram > span {
+  color: #7bb7ff;
+}
+.boot-center h1 {
+  margin: 24px 0 37px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.boot-center h1 > span {
+  font-weight: 300;
+}
+.boot-progress {
+  width: 166px;
+  height: 3px;
+  overflow: hidden;
+  background: #293c5d;
+  border-radius: 3px;
+}
+.boot-progress > span {
+  display: block;
+  height: 100%;
+  background: #d7e8ff;
+  transform-origin: left;
+  animation: boot-load 1700ms cubic-bezier(0.25, 0.1, 0.2, 1) both;
+}
+.boot-center p {
+  margin-top: 16px;
+  color: #b0c3e1;
+  font-size: 11px;
+}
+.boot-skip {
+  position: absolute;
+  right: 30px;
+  bottom: 27px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  padding: 8px 0;
+  font-size: 11px !important;
+}
+.boot-skip:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.boot-signature {
+  position: absolute;
+  left: 30px;
+  bottom: 35px;
+  font-size: 10px;
+  color: #9cb2d5;
+}
+.os-login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #082058 url("/desktop/ocean-wallpaper.webp") center / cover;
+  animation: login-arrival 500ms ease-out both;
+}
+.os-login::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: #02132b4d;
+  backdrop-filter: blur(14px) saturate(85%);
+}
+.login-topbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 31px;
+  font-size: 11px;
+  color: #dceaff;
+}
+.login-topbar strong {
+  font-size: 17px;
+  margin-right: 13px;
+  letter-spacing: -0.04em;
+}
+.login-clock {
+  text-align: center;
+  margin-top: clamp(20px, 5.5vh, 75px);
+}
+.login-clock time {
+  display: block;
+  font-size: clamp(57px, 6.3vw, 91px);
+  font-weight: 350;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.login-clock p {
+  margin-top: 9px;
+  font-size: 13px;
+  color: #e0ebff;
+}
+.login-user {
+  margin: auto;
+  padding: 28px 20px 45px;
+  text-align: center;
+}
+.login-user h1 {
+  font-size: 22px;
+  font-weight: 550;
+  letter-spacing: -0.025em;
+}
+.login-intro {
+  margin: 10px 0 27px;
+  color: #d0dfff;
+  font-size: 12px;
+}
+.login-user-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  margin: auto;
+  padding: 10px 26px;
+  border-radius: 15px;
+}
+.login-user-button:hover .login-avatar,
+.login-user-button:focus-visible .login-avatar {
+  background: #edf5ff3b;
+  box-shadow:
+    inset 0 0 0 2px #edf5ff9c,
+    0 12px 32px #00102c33;
+}
+.login-user-button:disabled {
+  cursor: default;
+}
+.login-avatar {
+  display: grid;
+  place-items: center;
+  width: 90px;
+  height: 90px;
+  background: #dbeaff29;
+  color: #eef5ff;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 1px #edf5ff70,
+    0 12px 32px #00102c33;
+  transition:
+    background 150ms ease,
+    box-shadow 150ms ease;
+}
+.login-user-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 14px;
+}
+.login-user-description {
+  font-size: 11px;
+  color: #dce8ff;
+  margin-top: 6px;
+}
+.login-enter {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: #e6f0ff20;
+  padding: 10px 17px;
+  border-radius: 7px;
+  margin-top: 22px;
+  font-size: 12px;
+  min-height: 38px;
+}
+.login-status {
+  margin-top: 18px;
+  color: #d0dfff;
+  font-size: 10px;
+  min-height: 16px;
+}
+.login-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 31px 28px;
+  font-size: 11px;
+  color: #e0ebff;
+}
+.login-footer button,
+.login-footer a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+  padding: 7px 0;
+}
+.login-footer a:hover,
+.login-footer button:hover {
+  color: #fff;
+}
+.login-spinner {
+  animation: login-spin 900ms linear infinite;
+}
+.os-login--entering .login-user {
+  animation: login-confirm 650ms ease-out both;
+}
+@keyframes boot-mark-arrival {
+  from {
+    opacity: 0.6;
+    filter: blur(5px);
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+@keyframes boot-load {
+  from {
+    transform: scaleX(0.02);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes login-arrival {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes login-confirm {
+  to {
+    opacity: 0.3;
+    transform: scale(1.025);
+    filter: blur(2px);
+  }
+}
+@keyframes desktop-arrival {
+  from {
+    opacity: 0.35;
+    transform: scale(1.025);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+@keyframes login-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.os-session--reduced *,
+.os-session--reduced *::before {
+  animation: none !important;
+  transition: none !important;
+}
+@media (max-width: 600px) {
+  .boot-monogram {
+    font-size: 68px;
+  }
+  .boot-signature {
+    left: 0;
+    right: 0;
+    bottom: 76px;
+    text-align: center;
+    font-size: 9px;
+  }
+  .boot-skip {
+    right: 0;
+    left: 0;
+    bottom: 30px;
+    justify-content: center;
+  }
+  .login-topbar {
+    padding: 21px 23px;
+    font-size: 10px;
+  }
+  .login-clock {
+    margin-top: 24px;
+  }
+  .login-clock time {
+    font-size: 64px;
+  }
+  .login-clock p {
+    font-size: 11px;
+  }
+  .login-user {
+    padding-bottom: 25px;
+  }
+  .login-user h1 {
+    font-size: 21px;
+  }
+  .login-intro {
+    font-size: 11px;
+  }
+  .login-footer {
+    padding: 14px 23px max(23px, env(safe-area-inset-bottom));
+    font-size: 10px;
+  }
+}
+@media (max-height: 650px) {
+  .login-clock {
+    margin-top: 0;
+  }
+  .login-clock time {
+    font-size: 45px;
+  }
+  .login-user {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .login-intro {
+    margin-bottom: 12px;
+  }
+  .login-avatar {
+    width: 63px;
+    height: 63px;
+  }
+  .login-enter {
+    margin-top: 10px;
+  }
+  .login-status {
+    margin-top: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .os-session *,
+  .os-session *::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}

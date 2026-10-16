@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "Health/HUD pixels render in fixed framebuffer at DPR 1.25",
+    "Health/HUD pixels render in fixed framebuffer at DPR 2",
+    "Deferred audio resume displays an activation control",
+    "Direct activation unlocks and resumes sound",
+    "Unlock prompt disappears after audio starts",
+    "Five fullscreen enter/exit cycles retain the running game",
+    "Shift+Tab exits fullscreen and returns focus to window controls",
+    "Keyboard release leaves gameplay paused",
+    "No HUD/audio runtime errors"
+  ],
+  "errors": []
+}

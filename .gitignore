@@ -3,6 +3,7 @@ node_modules
 
 # Next.js
 .next/
+.next-validation/
 out/
 
 # production
@@ -27,3 +28,6 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local browser verification dependencies
+.impeccable/tools/
