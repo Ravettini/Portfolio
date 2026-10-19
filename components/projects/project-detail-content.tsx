@@ -44,7 +44,7 @@ export function ProjectDetailContent({ project }: { project: Project }) {
                 <dd>{project.meta.client}</dd>
               </div>
               <div>
-                <dt>A?o</dt>
+                <dt>Año</dt>
                 <dd>{project.meta.date}</dd>
               </div>
             </dl>
@@ -65,13 +65,13 @@ export function ProjectDetailContent({ project }: { project: Project }) {
             <nav className="detail-nav" aria-label="Contenido del proyecto">
               <a href="#resumen">Contexto</a>
               <a href="#problema">Problema</a>
-              <a href="#solucion">Soluci?n</a>
+              <a href="#solucion">Solución</a>
               {project.process.length > 0 && <a href="#proceso">Proceso</a>}
               {project.results.length > 0 && (
                 <a href="#resultados">Resultados</a>
               )}
-              <a href="#tecnologias">Tecnolog?as</a>
-              {project.gallery.length > 0 && <a href="#galeria">Galer?a</a>}
+              <a href="#tecnologias">Tecnologías</a>
+              {project.gallery.length > 0 && <a href="#galeria">Galería</a>}
             </nav>
             <section id="resumen" className="detail-section" data-reveal>
               <h2>
@@ -81,7 +81,7 @@ export function ProjectDetailContent({ project }: { project: Project }) {
             </section>
             <section id="problema" className="detail-section" data-reveal>
               <h2>
-                <span>02 / Desaf?o</span>El problema.
+                <span>02 / Desafío</span>El problema.
               </h2>
               <div>
                 <p>{project.problem}</p>
@@ -97,7 +97,7 @@ export function ProjectDetailContent({ project }: { project: Project }) {
             </section>
             <section id="solucion" className="detail-section" data-reveal>
               <h2>
-                <span>03 / Producto</span>La soluci?n.
+                <span>03 / Producto</span>La solución.
               </h2>
               <div>
                 <p>{project.solution}</p>
@@ -157,7 +157,7 @@ export function ProjectDetailContent({ project }: { project: Project }) {
             {project.gallery.length > 0 && (
               <section id="galeria" className="gallery-section">
                 <p className="eyebrow">07 / Dentro del producto</p>
-                <h2>Una mirada m?s cerca.</h2>
+                <h2>Una mirada más cerca.</h2>
                 <div className="detail-gallery">
                   {project.gallery.map((src, index) => (
                     <figure key={src} data-reveal>

@@ -4,7 +4,7 @@ export function ContactSection() {
     <section id="contacto" className="editorial-contact">
       <div className="shell">
         <p className="eyebrow" data-reveal>
-          04 / Pr?xima conversaci?n
+          04 / Próxima conversación
         </p>
         <h2 data-reveal>
           ?Algo en mente?

@@ -52,7 +52,7 @@ export function HeroClient() {
           </h1>
           <p className="hero-description" data-intro>
             Transformo problemas reales en software que funciona. Del primer
-            concepto a un producto en producci?n.
+            concepto a un producto en producción.
           </p>
           <div className="hero-actions" data-intro>
             <a className="button-primary" href="#proyectos">
@@ -66,8 +66,8 @@ export function HeroClient() {
         <div className="hero-object">
           <SculptureScene />
           <div className="object-caption">
-            <span>01 / Forma & funci?n</span>
-            <span>Dise?ado para conectar.</span>
+            <span>01 / Forma & función</span>
+            <span>Diseñado para conectar.</span>
           </div>
         </div>
       </div>

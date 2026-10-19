@@ -66,7 +66,7 @@ export function ExperienceSection() {
         <h2>
           Experiencia
           <br />
-          <span>en acci?n.</span>
+          <span>en acción.</span>
         </h2>
       </div>
       <div>

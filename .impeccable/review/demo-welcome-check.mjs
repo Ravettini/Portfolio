@@ -1,0 +1,36 @@
+import {chromium} from '../tools/node_modules/playwright/index.mjs';
+import fs from 'node:fs/promises';
+const live=process.argv.includes('--live');
+const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+const apps=[['acreditapp',4101,'/admin/eventos','Acreditapp'],['recursos-humanos',4102,'/metricas','Recursos Humanos'],['buscador-dotacion',4103,'/inicio','Buscador Dotación'],['produccion',4104,'/','Producción'],['sigma',4105,'/home','SIGMA']];
+const checks=[],errors=[];
+const assert=(condition,label)=>{if(!condition)throw Error(label);checks.push(label);console.log('PASS',label);};
+for(const [app,port,route,name] of apps){
+ const context=await browser.newContext({viewport:{width:1440,height:960}}); const page=await context.newPage();
+ page.on('pageerror',e=>errors.push(app+': '+e.message));
+ const base=live?'https://ravettini-demo-'+app+'.vercel.app':'http://127.0.0.1:'+port;
+ await page.goto(base+route,{waitUntil:'networkidle'});
+ const modal=page.locator('#portfolio-demo-welcome'); await modal.waitFor({state:'visible'});
+ assert((await modal.innerText()).includes('Bienvenido a la demo de '+name),app+' welcomes visitors by name');
+ assert((await modal.innerText()).includes('más de 360 personas'),app+' includes supplied work context with UTF-8 accents');
+ assert((await modal.innerText()).includes('Qué podés probar'),app+' explains real actions');
+ assert(await page.evaluate(()=>document.characterSet==='UTF-8'),app+' document is UTF-8');
+ assert(await page.getByRole('button',{name:'Explorar demo',exact:true}).evaluate(el=>document.activeElement===el),app+' focuses the primary action');
+ await page.screenshot({path:'.impeccable/review/'+app+'-welcome-desktop.png'});
+ await page.setViewportSize({width:390,height:844});
+ assert(await modal.evaluate(el=>el.getBoundingClientRect().left>=0&&el.getBoundingClientRect().right<=innerWidth&&el.getBoundingClientRect().height<=innerHeight),app+' welcome fits mobile viewport');
+ await page.screenshot({path:'.impeccable/review/'+app+'-welcome-mobile.png'});
+ await page.getByRole('button',{name:'Explorar demo',exact:true}).click();
+ await page.reload({waitUntil:'networkidle'});
+ assert(!await modal.isVisible(),app+' remembers dismissal within the session');
+ await page.getByRole('button',{name:'Acerca de esta demo',exact:true}).click(); await modal.waitFor({state:'visible'});
+ await page.keyboard.press('Escape');
+ assert(!await modal.isVisible(),app+' can reopen and close welcome with Escape');
+ const body=await page.locator('body').innerText();
+ assert(!/GCBA|GCABA|Subsecretaría de Cultura|GO de Observatorio/i.test(body),app+' removes institutional branding');
+ assert(!/\ufffd|Ã¡|Ã³|Direcci\?n|demostraci\?n|\?rea/.test(body),app+' renders clean Spanish text');
+ await context.close();
+}
+assert(errors.length===0,'No runtime exceptions');
+await fs.writeFile('.impeccable/review/demo-welcome-'+(live?'live':'local')+'-verification.json',JSON.stringify({checks,errors},null,2));
+await browser.close();

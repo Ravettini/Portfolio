@@ -1,0 +1,64 @@
+{
+  "scope": "Demo welcome, UTF-8 and generic branding",
+  "sourceArchives": {
+    "acreditapp": {
+      "sourceFiles": 94,
+      "archive": "acreditapp-source.zip",
+      "sha256": "6dc0ab929c03c27b1cdc3c29e9de1358b00de79662d49cb6658d8485fc29e6ff",
+      "build": "passed",
+      "credentialsOrPrivateDataFindings": [],
+      "encoding": "UTF-8",
+      "institutionalBrandingFindings": [],
+      "welcomeIntroduction": true
+    },
+    "buscador-dotacion": {
+      "sourceFiles": 102,
+      "archive": "buscador-dotacion-source.zip",
+      "sha256": "0df948422b6866e2bf59909b68941591af27219e2349771d74c5add06d271dee",
+      "build": "passed",
+      "credentialsOrPrivateDataFindings": [],
+      "encoding": "UTF-8",
+      "institutionalBrandingFindings": [],
+      "welcomeIntroduction": true
+    },
+    "produccion": {
+      "sourceFiles": 96,
+      "archive": "produccion-source.zip",
+      "sha256": "81e908e9a5c0213e107ebccd973af34ef846d2a7c0d9c94e47563f90b7ef9659",
+      "build": "passed",
+      "credentialsOrPrivateDataFindings": [],
+      "encoding": "UTF-8",
+      "institutionalBrandingFindings": [],
+      "welcomeIntroduction": true
+    },
+    "recursos-humanos": {
+      "sourceFiles": 135,
+      "archive": "recursos-humanos-source.zip",
+      "sha256": "921c8dd40bbed689446e115713e54c4875fb64060ae8f7cf121e9d3fc0970836",
+      "build": "passed",
+      "credentialsOrPrivateDataFindings": [],
+      "encoding": "UTF-8",
+      "institutionalBrandingFindings": [],
+      "welcomeIntroduction": true
+    },
+    "sigma": {
+      "sourceFiles": 70,
+      "archive": "sigma-source.zip",
+      "sha256": "d47023e4197b3f148ca0a736eaf628db15fdc535f602b3f913340ca49e95a488",
+      "build": "passed",
+      "credentialsOrPrivateDataFindings": [],
+      "encoding": "UTF-8",
+      "institutionalBrandingFindings": [],
+      "welcomeIntroduction": true
+    }
+  },
+  "validation": [
+    "Five new deployments READY",
+    "51 local welcome, keyboard, UTF-8 and mobile checks passed",
+    "51 live welcome, keyboard, UTF-8 and mobile checks passed",
+    "13 live primary flow and isolation checks passed",
+    "Portfolio standalone TypeScript and production build passed",
+    "All archived text files decode as UTF-8; no GCBA or GCABA references in source archives"
+  ],
+  "copy": "360+ people claim supplied by the portfolio author"
+}

@@ -18,14 +18,14 @@ export function AboutSection() {
             creador de software en Buenos Aires.
           </p>
           <p>
-            Dise?o y construyo aplicaciones completas: interfaces, APIs, bases
+            Diseño y construyo aplicaciones completas: interfaces, APIs, bases
             de datos e integraciones. Me interesa transformar procesos manuales
             en productos claros, usables y mantenibles.
           </p>
           <p>
             Actualmente trabajo en el Gobierno de la Ciudad de Buenos Aires.
-            Tambi?n tengo experiencia en an?lisis de datos, automatizaci?n y
-            formaci?n t?cnica.
+            También tengo experiencia en análisis de datos, automatización y
+            formación técnica.
           </p>
           <a
             className="text-link"

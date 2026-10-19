@@ -81,7 +81,7 @@ export const projects: Project[] = [
       '/proyectos/acreditapp/eventos.png',
       '/proyectos/acreditapp/informe.png',
     ],
-    meta: { type: 'Web app full stack', client: 'GCBA', date: '2025' },
+    meta: { type: 'Web app full stack', client: 'Organización', date: '2025' },
     results: [
       { value: 'Tiempo real', label: 'Control operativo durante el evento' },
       { value: '100%', label: 'Trazabilidad de acreditaciones' },
@@ -137,7 +137,7 @@ export const projects: Project[] = [
       '/proyectos/recursos-humanos/metricas.png',
       '/proyectos/recursos-humanos/aprobaciones.png',
     ],
-    meta: { type: 'Web app full stack', client: 'GCBA', date: '2025' },
+    meta: { type: 'Web app full stack', client: 'Organización', date: '2025' },
     results: [
       { value: '1 hub', label: 'Operación RR.HH. centralizada' },
       { value: 'Roles', label: 'Permisos y trazabilidad por perfil' },
@@ -155,11 +155,11 @@ export const projects: Project[] = [
   },
   {
     slug: 'buscador-dotacion-gcba',
-    title: 'Buscador Dotación GCBA',
+    title: 'Buscador Dotación',
     category: 'Herramienta de datos',
     shortDescription:
       'Aplicación interna para consultar y explotar más de 230.000 registros de dotación con filtros avanzados y exportaciones.',
-    what: 'Diseñé y desarrollé una aplicación web interna para consultar y explotar la dotación del GCBA sobre una base de más de 230.000 registros. Pensada para transformar una base extensa en una herramienta ágil, usable y orientada a decisiones.',
+    what: 'Diseñé y desarrollé una aplicación web interna para consultar y explotar la dotación de una organización sobre una base de más de 230.000 registros. Pensada para transformar una base extensa en una herramienta ágil, usable y orientada a decisiones.',
     problem:
       'El problema operativo concreto era transformar una base extensa y difícil de navegar en una herramienta usable: las consultas, segmentaciones y tareas administrativas requerían mucho tiempo o trabajo manual porque no existía una forma ágil de buscar personas, cruzar CUILs, detectar registros sin email o generar listas de mailing listas para exportar.',
     solution:
@@ -191,7 +191,7 @@ export const projects: Project[] = [
       '/proyectos/buscador-dotacion/cargos.png',
       '/proyectos/buscador-dotacion/mailing.png',
     ],
-    meta: { type: 'Web app de consulta', client: 'GCBA', date: '2025' },
+    meta: { type: 'Web app de consulta', client: 'Organización', date: '2025' },
     results: [
       { value: '230K+', label: 'Registros consultables' },
       { value: '−80%', label: 'Tiempo en consultas repetitivas' },
@@ -245,7 +245,7 @@ export const projects: Project[] = [
       '/proyectos/sigma/analytics.png',
       '/proyectos/sigma/gestion.png',
     ],
-    meta: { type: 'Plataforma de gestión', client: 'GCBA', date: '2025–2026' },
+    meta: { type: 'Plataforma de gestión', client: 'Organización', date: '2025–2026' },
     results: [
       { value: '1 vista', label: 'Consolidación de indicadores' },
       { value: 'Roles', label: 'Gestión por área y permisos' },
@@ -263,18 +263,18 @@ export const projects: Project[] = [
   },
   {
     slug: 'produccion-eventos',
-    title: 'Producci?n de eventos',
-    category: 'Gesti?n de eventos',
-    shortDescription: 'Plataforma para coordinar eventos, requerimientos de producci?n y calendarios institucionales.',
-    what: 'Sistema de gesti?n de eventos con estados, calendario, requerimientos por ?rea y seguimiento de la producci?n.',
+    title: 'Producción de eventos',
+    category: 'Gestión de eventos',
+    shortDescription: 'Plataforma para coordinar eventos, requerimientos de producción y calendarios institucionales.',
+    what: 'Sistema de gestión de eventos con estados, calendario, requerimientos por área y seguimiento de la producción.',
     problem: '',
     solution: '',
     problemPoints: [],
-    solutionFeatures: ['Gesti?n de eventos y estados', 'Calendario compartido', 'Requerimientos por ?rea'],
+    solutionFeatures: ['Gestión de eventos y estados', 'Calendario compartido', 'Requerimientos por área'],
     tech: ['React', 'TypeScript', 'Node.js', 'Prisma'],
     href: '/demos/produccion',
     gallery: ['/proyectos/produccion/listado.png', '/proyectos/produccion/calendario.png'],
-    meta: { type: 'Plataforma de gesti?n', client: 'GCBA', date: '2026' },
+    meta: { type: 'Plataforma de gestión', client: 'Organización', date: '2026' },
     results: [],
     process: [],
     featured: false,

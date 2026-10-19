@@ -80,7 +80,7 @@ export function ProjectsSection() {
         <div>
           <h2>
             Ideas que llegaron
-            <br />a <span>producci?n.</span>
+            <br />a <span>producción.</span>
           </h2>
           <p>
             Aplicaciones, plataformas y herramientas.
@@ -100,7 +100,7 @@ export function ProjectsSection() {
         ))}
       </div>
       <div className="other-projects" data-reveal>
-        <p className="eyebrow">M?s exploraciones</p>
+        <p className="eyebrow">Más exploraciones</p>
         {getOtherProjects().map((project) => (
           <a
             key={project.slug}

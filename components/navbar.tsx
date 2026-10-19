@@ -89,7 +89,7 @@ export function Navbar() {
         </div>
         {open && (
           <div ref={panel} id="mobile-nav" className="mobile-nav">
-            <nav aria-label="Principal m?vil">
+            <nav aria-label="Principal móvil">
               {links.map(([id, label]) => (
                 <Link
                   href={prefix + "#" + id}
