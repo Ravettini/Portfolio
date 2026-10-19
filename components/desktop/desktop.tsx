@@ -34,7 +34,7 @@ import dynamic from "next/dynamic";
 import { projects } from "@/lib/projects";
 import { AppIcon, applicationIcons } from "./app-icon";
 import { ProjectApp } from "./project-app";
-import { resizeEdges, resizeWindowRect, type ResizeEdge, type WindowRect } from "@/lib/window-resize";
+import { resizeCursors, resizeEdges, resizeWindowRect, type ResizeEdge, type WindowRect } from "@/lib/window-resize";
 import {
   UtilitiesFolder,
   PaintApp,
@@ -854,7 +854,7 @@ export function Desktop({
       id="main"
       tabIndex={-1}
       className={`os-desktop${dark ? " os-dark" : ""}${wallpaper === "midnight" ? " os-midnight" : ""}${reducedMotion ? " os-reduced-motion" : ""}${hasMaximizedWindow ? " os-desktop--immersive" : ""}${draggingIcon ? " os-desktop--icon-dragging" : ""}${resizing ? " os-desktop--resizing" : ""}`}
-      style={resizing ? { cursor: `${resizing}-resize` } : undefined}
+      style={resizing ? { cursor: resizeCursors[resizing] } : undefined}
       data-ready={ready}
       onPointerDown={beginSelection}
       onPointerMove={moveSelection}

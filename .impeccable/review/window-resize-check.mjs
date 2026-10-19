@@ -1,5 +1,5 @@
 ﻿import {chromium} from '../tools/node_modules/playwright/index.mjs';
-import {resizeWindowRect, resizeEdges} from '../../lib/window-resize.ts';
+import {resizeWindowRect, resizeEdges, resizeCursors} from '../../lib/window-resize.ts';
 import fs from 'node:fs/promises';
 const checks=[],errors=[];
 const ok=(value,label)=>{if(!value)throw Error(label);checks.push(label);console.log('PASS',label);};
@@ -18,7 +18,13 @@ try{
  const box=()=>win.boundingBox();
  const drag=async(host,edge,dx,dy)=>{const h=host.locator(`[data-resize-edge="${edge}"]`);const r=await h.boundingBox();await p.mouse.move(r.x+r.width/2,r.y+r.height/2);await p.mouse.down();await p.mouse.move(r.x+r.width/2+dx,r.y+r.height/2+dy,{steps:8});await p.mouse.up();};
  ok(await win.locator('[data-resize-edge]').count()===8,'Floating windows expose four edges and four corners');
- for(const edge of resizeEdges){const before=await box();await drag(win,edge,edge.includes('w')?-12:12,edge.includes('n')?-12:12);const after=await box();ok(after.width>=before.width&&after.height>=before.height&&(after.width>before.width||after.height>before.height),'Pointer resizes '+edge);}
+ for(const edge of resizeEdges){
+ const target=win.locator(`[data-resize-edge="${edge}"]`);await target.hover();
+ ok(await target.evaluate(el=>getComputedStyle(el).cursor)===resizeCursors[edge],'Hover uses native directional cursor: '+edge);
+ const hb=await target.boundingBox();await p.mouse.move(hb.x+hb.width/2,hb.y+hb.height/2);await p.mouse.down();
+ ok(await p.locator('.os-desktop').evaluate(el=>getComputedStyle(el).cursor)===resizeCursors[edge]&&await target.evaluate(el=>getComputedStyle(el).cursor)===resizeCursors[edge],'Dragging preserves directional cursor: '+edge);
+ await p.mouse.up();
+ const before=await box();await drag(win,edge,edge.includes('w')?-12:12,edge.includes('n')?-12:12);const after=await box();ok(after.width>=before.width&&after.height>=before.height&&(after.width>before.width||after.height>before.height),'Pointer resizes '+edge);}
  let before=await box();const handle=win.locator('[data-resize-edge="se"]');let r=await handle.boundingBox();
  await p.mouse.move(r.x+8,r.y+8);await p.mouse.down();await p.mouse.move(r.x+50,r.y+50);await p.keyboard.press('Escape');await p.mouse.up();
  ok(JSON.stringify(await box())===JSON.stringify(before),'Escape cancels resizing and restores original geometry');

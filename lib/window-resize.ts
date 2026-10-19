@@ -1,5 +1,9 @@
 export const resizeEdges = ["n", "e", "s", "w", "ne", "se", "sw", "nw"] as const;
 export type ResizeEdge = (typeof resizeEdges)[number];
+export const resizeCursors: Record<ResizeEdge, string> = {
+  n: "ns-resize", s: "ns-resize", e: "ew-resize", w: "ew-resize",
+  ne: "nesw-resize", sw: "nesw-resize", nw: "nwse-resize", se: "nwse-resize",
+};
 export type WindowRect = { left: number; top: number; width: number; height: number };
 
 const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(value, max));
