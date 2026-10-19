@@ -322,6 +322,16 @@
   height: 29px;
   filter: drop-shadow(0 1px 1px #0002);
 }
+.app-icon--doom {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+.app-icon--doom img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .app-icon--blue {
   --icon-top: #239bff;
   --icon-bottom: #0454e8;

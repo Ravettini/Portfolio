@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   BadgeCheck,
   Gamepad2,
@@ -99,10 +100,12 @@ export function AppIcon({
   const Icon = app.icon;
   return (
     <span
-      className={`app-icon app-icon--${app.color}${small ? " app-icon--small" : ""}`}
+      className={`app-icon app-icon--${id === "doom" ? "doom" : app.color}${small ? " app-icon--small" : ""}`}
       aria-hidden="true"
     >
-      <Icon strokeWidth={1.65} />
+      {id === "doom" ? (
+        <Image src="/games/doom/logo.png" alt="" width={603} height={368} sizes={small ? "32px" : "48px"} draggable={false} />
+      ) : <Icon strokeWidth={1.65} />}
     </span>
   );
 }
