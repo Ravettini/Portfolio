@@ -355,3 +355,6 @@ The system menu offers Cambiar usuario, which returns to selection while preserv
 ### Unified demo browser
 
 Demo apps launch maximized, filling the workspace below the 34px system menu (38px on mobile). A single 56px titlebar groups native traffic lights, a centered hostname, Proyecto/Volver a demo, reload and new-tab controls. The presentation retains case-study access. Mobile hides the hostname and uses 44px action targets. The iframe receives the remaining viewport without scaling or margins. Green restores the existing floating window; navigation and form state remain mounted through resize, view changes and minimize. The dock keeps its existing reveal behavior. Other application windows retain their established geometry.
+
+
+Demo information lives inside each app as an inline Demo control, replacing the former fixed information banner and corner button. The introduction contains the synthetic-data notice and confirmed reset action. Embedded demos allow native confirmation dialogs so cancellation preserves changes and confirmed reset restores the sample dataset.

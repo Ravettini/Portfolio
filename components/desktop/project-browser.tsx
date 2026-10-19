@@ -96,7 +96,7 @@ export function ProjectBrowser({
           key={revision}
           src={url}
           title={`Demo interactiva de ${project.title}`}
-          sandbox="allow-scripts allow-same-origin allow-forms allow-downloads allow-popups allow-popups-to-escape-sandbox"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-downloads allow-popups allow-popups-to-escape-sandbox"
           allowFullScreen
           onLoad={() => { setLoading(false); setDelayed(false); setFailed(false); }}
           onError={() => { setLoading(false); setFailed(true); }}
