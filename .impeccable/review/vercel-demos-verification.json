@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "Acreditapp accredits a synthetic attendee through its real UI",
+    "Accreditation survives reload locally",
+    "HR vacation request persists with synthetic local data",
+    "Production duplicates demo events and retains them across navigation",
+    "SIGMA indicator/project management persists local changes",
+    "Dotacion real search UI returns matching synthetic records only",
+    "No production endpoints or original analytics requested",
+    "No runtime exceptions in primary demo flows",
+    "acreditapp labels its mobile demo",
+    "recursos-humanos labels its mobile demo",
+    "produccion labels its mobile demo",
+    "sigma labels its mobile demo",
+    "buscador-dotacion labels its mobile demo"
+  ],
+  "errors": [],
+  "productionRequests": []
+}

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import "./os.css";
 import "./boot.css";
 import "./utilities.css";
 import "./doom.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin", "latin-ext"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+const plusJakarta = localFont({
+  src: "../public/fonts/PlusJakartaSans-Variable.ttf",
+  weight: "200 700",
   variable: "--font-sans",
   display: "swap",
 });

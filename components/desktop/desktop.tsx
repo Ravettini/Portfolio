@@ -77,6 +77,7 @@ const desktopOrder = [
   "v-mail-validator",
   "acqua-di-colbert",
   "sigma",
+  "produccion-eventos",
   "dermatologia-tod",
   "simulacro-entrevistas",
   "media-compressor",

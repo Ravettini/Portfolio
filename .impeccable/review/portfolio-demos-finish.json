@@ -1,0 +1,19 @@
+{
+  "scope": "Five sanitized standalone portfolio demos and portfolio integration",
+  "status": "Five demos publicly deployed and verified; portfolio ready for production deployment",
+  "validation": [
+    "Five application builds passed",
+    "Portfolio build and standalone TypeScript passed",
+    "13 primary flow/isolation/mobile checks passed",
+    "Five portfolio demo link redirects passed",
+    "XLSX export generated valid archive from synthetic filtered data",
+    "Copied original analytics removed and independently confirmed",
+    "New source archives exclude env files, private data, Git history and dependencies",
+    "Five Vercel deployments READY",
+    "13 live browser checks passed on public aliases",
+    "Portfolio updated to Next.js 15.5.28 and self-hosted original font; standalone TypeScript and production build passed"
+  ],
+  "limits": [
+    "Only primary backend flows are simulated; private modules without adapters return explicit errors"
+  ]
+}

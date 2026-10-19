@@ -31,6 +31,11 @@ export const applicationIcons: Record<
 > = {
   acreditapp: { icon: BadgeCheck, color: "blue", label: "Acreditapp" },
   sigma: { icon: Sigma, color: "violet", label: "SIGMA" },
+  "produccion-eventos": {
+    icon: BriefcaseBusiness,
+    color: "teal",
+    label: "Producción",
+  },
   "recursos-humanos-ssccrs": {
     icon: UsersRound,
     color: "green",

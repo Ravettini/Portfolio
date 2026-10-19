@@ -21,6 +21,7 @@ export function ProjectApp({
   full?: boolean;
 }) {
   const [image, setImage] = useState(0);
+  const isDemo = project.href.startsWith("/demos/");
   return (
     <div className={`project-app${full ? " project-app--full" : ""}`}>
       {full && (
@@ -49,16 +50,20 @@ export function ProjectApp({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <ArrowUpRight size={15} /> Abrir sitio
+            <ArrowUpRight size={15} /> {isDemo ? "Abrir demo" : "Abrir sitio"}
           </a>
         </div>
       </div>
-      <p className="project-app-summary">{project.shortDescription}</p>
+      <p className="project-app-summary">
+        {project.shortDescription}
+        {isDemo &&
+          " La demo utiliza datos ficticios y no se conecta al sistema original."}
+      </p>
       {project.gallery.length > 0 ? (
         <figure className="project-app-gallery">
           <Image
             src={project.gallery[image]}
-            alt={`Captura real de ${project.title}, vista ${image + 1} de ${project.gallery.length}`}
+            alt={`Captura de ${isDemo ? "la demo de " : ""}${project.title}, vista ${image + 1} de ${project.gallery.length}`}
             width={1600}
             height={1000}
             sizes={
