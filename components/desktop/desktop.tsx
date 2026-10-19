@@ -1076,6 +1076,9 @@ export function Desktop({
           .map((win) => {
             const index = windows.findIndex((w) => w.id === win.id);
             const isProject = projects.some((p) => p.slug === win.id);
+            const isDemoProject = projects.some(
+              (p) => p.slug === win.id && p.href.startsWith("/demos/"),
+            );
             const style: CSSProperties = {
               zIndex: 20 + index,
               ...(win.x !== undefined
@@ -1090,7 +1093,7 @@ export function Desktop({
                 tabIndex={-1}
                 hidden={win.minimized}
                 data-app-window={win.id}
-                className={`os-window os-window--${win.id}${isProject ? " os-window--project" : ""}${active === win.id ? " os-window--active" : ""}${win.maximized ? " os-window--maximized" : ""}`}
+                className={`os-window os-window--${win.id}${isProject ? " os-window--project" : ""}${isDemoProject ? " os-window--browser" : ""}${active === win.id ? " os-window--active" : ""}${win.maximized ? " os-window--maximized" : ""}`}
                 style={style}
                 onPointerDown={(event) => {
                   if ((event.target as HTMLElement).closest(".window-controls"))
@@ -1170,7 +1173,7 @@ export function Desktop({
                     <ChevronDown size={13} />
                   </span>
                 </header>
-                <div className="os-window-content">{renderApp(win.id)}</div>
+                <div className={`os-window-content${isDemoProject ? " os-window-content--browser" : ""}`}>{renderApp(win.id)}</div>
               </section>
             );
           })}

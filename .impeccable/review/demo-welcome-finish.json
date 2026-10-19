@@ -14,7 +14,7 @@
     "buscador-dotacion": {
       "sourceFiles": 102,
       "archive": "buscador-dotacion-source.zip",
-      "sha256": "0df948422b6866e2bf59909b68941591af27219e2349771d74c5add06d271dee",
+      "sha256": "4faeafd68c92b01d4b35a6b01a6a7d5ef49ee227e62834d2415466d99ac37b2b",
       "build": "passed",
       "credentialsOrPrivateDataFindings": [],
       "encoding": "UTF-8",
@@ -70,5 +70,6 @@
       "Legacy enabled preference has no effect",
       "Theme toggle still works; no runtime errors"
     ]
-  }
+  },
+  "dotacionEntryUpdate": "Removed nested buttons from workspace cards to avoid invalid HTML and hydration errors when opening the app entry route."
 }

@@ -1,0 +1,14 @@
+{
+  "scope": "Interactive browser windows for five sanitized portfolio demos",
+  "validation": [
+    "Five actual embedded demos load without runtime errors",
+    "Vacation form submission works inside sandbox",
+    "Minimize, restore, reload, close and view switching passed",
+    "Mobile layout and external-tab fallback passed",
+    "Slow-load retry notice and automatic recovery passed",
+    "Standalone TypeScript and final production build passed",
+    "Dotacion entry hydration error fixed and new deployment READY"
+  ],
+  "images": "Playwright captures of the actual portfolio and synthetic-data apps",
+  "verdict": "Ready to publish"
+}

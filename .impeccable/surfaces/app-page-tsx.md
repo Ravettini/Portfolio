@@ -23,6 +23,10 @@ FORM: User-pinned macOS desktop overrides concept assignment; seed reference una
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
+## Live project browser extension
+
+The user approved interactive demos inside project windows, replacing the enlarged screenshot as their default view. Five public, sanitized demos now open in a browser with Demo/Proyecto views, the configured hostname, reload, a new-tab link and case-study access. Switching views or minimizing preserves the live iframe; closing removes it. Other projects and full case studies retain their presentation. The browser follows the existing window chrome and responsive sheet, with usable desktop dimensions and a wrapping mobile toolbar. Captures in `.impeccable/review/project-browser-desktop.png` and `project-browser-mobile.png` document the actual result.
+
 ## Startup and window-control extension
 
 User requested a PC-style boot animation and user selection, retaining the approved desktop world. The first visit in a tab now shows a brief IR boot mark/progress, then a password-free Visitante selection over the existing blue wallpaper, then a bounded desktop entrance. Returning from a case study or reloading within the tab resumes the session. The system menu provides Cambiar usuario (retains mounted apps) and Reiniciar sistema (resets windows and replays boot). Motion reduction shortens delays and removes spatial animation; boot can also be skipped. No real authentication is implied.

@@ -1,0 +1,27 @@
+{
+  "checks": [
+    "recursos-humanos loads actual demo inside window",
+    "recursos-humanos has usable browser height",
+    "acreditapp loads actual demo inside window",
+    "acreditapp has usable browser height",
+    "buscador-dotacion loads actual demo inside window",
+    "buscador-dotacion has usable browser height",
+    "sigma loads actual demo inside window",
+    "sigma has usable browser height",
+    "produccion loads actual demo inside window",
+    "produccion has usable browser height",
+    "User can navigate and use the embedded app",
+    "Vacation form submits successfully within the sandboxed demo",
+    "Project presentation remains available",
+    "Switching views preserves demo navigation",
+    "Switching views preserves iframe instance",
+    "Reload replaces iframe and returns to its entry route",
+    "Browser minimizes with desktop controls",
+    "Browser restores from its desktop icon",
+    "External-tab fallback points to the sanitized demo",
+    "Mobile browser toolbar does not overflow",
+    "Interactive demo fits mobile window",
+    "Closing browser removes the embedded demo"
+  ],
+  "errors": []
+}

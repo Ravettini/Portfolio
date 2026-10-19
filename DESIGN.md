@@ -308,6 +308,12 @@ Floating dock tooltips appear after 3000ms of pointer dwell and clear immediatel
 
 The CV keeps the stable public URL `/cv-ignacio-ravettini.pdf` and now serves the exact replacement PDF supplied by the user. Its content is not reinterpreted by this design system.
 
+### Interactive project browsers
+
+The five sanitized demo projects open directly in a browser window. The existing macOS title bar remains; a second chrome row provides Demo/Proyecto view buttons, the real demo hostname, reload from the entry route, a new-tab link and the case-study link. The demo is a live cross-origin iframe, not a raster scaled to the window. Switching to Proyecto keeps that iframe mounted so navigation and form state survive. Closing removes it; minimizing preserves it. At desktop sizes, the initial browser is up to 1100px wide with space reserved for the menu and dock; maximizing fills the existing window frame. Mobile uses the existing sheet, 44px controls and a separate address row.
+
+Only configured public demo URLs are embedded. The sandbox allows scripts, same-origin storage, forms, downloads and popups, with top navigation restricted. A neutral loading surface becomes a nonblocking retry/new-tab notice after 12 seconds. Other projects retain their screenshot presentation, and full case-study routes retain their original content. Gallery sizes now account for maximized windows, with image quality 90. Browser screenshots in `.impeccable/review/project-browser-desktop.png` and `project-browser-mobile.png` are Playwright captures of the actual portfolio and synthetic-data demo, not generated imagery.
+
 ### Appearance settings
 
 Settings offer light/dark surfaces, Océano/Medianoche wallpaper and reduced motion. Preferences persist in local storage when available. Selected appearance has a blue inset outline; wallpaper options show the actual wallpaper as swatches.

@@ -12,8 +12,34 @@ import {
 import { useState } from "react";
 import { type Project } from "@/lib/projects";
 import { AppIcon } from "./app-icon";
+import { demoDeployments, type DemoSlug } from "@/lib/demo-deployments";
+import { ProjectBrowser } from "./project-browser";
 
 export function ProjectApp({
+  project,
+  full = false,
+}: {
+  project: Project;
+  full?: boolean;
+}) {
+  const slug = project.href.startsWith("/demos/")
+    ? project.href.slice("/demos/".length)
+    : "";
+  const demo = Object.hasOwn(demoDeployments, slug)
+    ? demoDeployments[slug as DemoSlug]
+    : undefined;
+
+  if (!full && demo?.url) {
+    return (
+      <ProjectBrowser project={project} url={demo.url}>
+        <ProjectPresentation project={project} />
+      </ProjectBrowser>
+    );
+  }
+  return <ProjectPresentation project={project} full={full} />;
+}
+
+function ProjectPresentation({
   project,
   full = false,
 }: {
@@ -69,8 +95,9 @@ export function ProjectApp({
             sizes={
               full
                 ? "(max-width: 900px) 95vw, 1000px"
-                : "(max-width: 900px) 95vw, 650px"
+                : "(max-width: 900px) 95vw, 100vw"
             }
+            quality={90}
             priority={project.slug === "acreditapp"}
           />
           {project.gallery.length > 1 && (
