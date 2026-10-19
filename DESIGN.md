@@ -350,3 +350,8 @@ The system menu offers Cambiar usuario, which returns to selection while preserv
 - **Don't** restore the superseded editorial direction from `idea.md`.
 - **Don't** invent clients, experience, metrics or project previews.
 - **Don't** make minimized windows lose their local state.
+
+
+### Unified demo browser
+
+Demo apps launch maximized, filling the workspace below the 34px system menu (38px on mobile). A single 56px titlebar groups native traffic lights, a centered hostname, Proyecto/Volver a demo, reload and new-tab controls. The presentation retains case-study access. Mobile hides the hostname and uses 44px action targets. The iframe receives the remaining viewport without scaling or margins. Green restores the existing floating window; navigation and form state remain mounted through resize, view changes and minimize. The dock keeps its existing reveal behavior. Other application windows retain their established geometry.

@@ -1,7 +1,7 @@
 "use client";
 
-import { ExternalLink, Globe2, RotateCw, ShieldCheck } from "lucide-react";
-import Link from "next/link";
+import { ExternalLink, Globe2, RotateCw, ShieldCheck, PanelTop } from "lucide-react";
+import { createPortal } from "react-dom";
 import { type ReactNode, useEffect, useState } from "react";
 import { type Project } from "@/lib/projects";
 
@@ -19,6 +19,11 @@ export function ProjectBrowser({
   const [loading, setLoading] = useState(true);
   const [delayed, setDelayed] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [chromeHost, setChromeHost] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setChromeHost(document.getElementById(`browser-chrome-${project.slug}`));
+  }, [project.slug]);
 
   useEffect(() => {
     if (!loading) return;
@@ -33,22 +38,21 @@ export function ProjectBrowser({
     setRevision((value) => value + 1);
   };
 
-  return (
-    <div className="project-browser">
+  const toolbar = (
       <nav className="project-browser-toolbar" aria-label={`Navegador de ${project.title}`}>
-        <div className="project-browser-views" aria-label="Vista del proyecto">
-          <button aria-pressed={view === "demo"} onClick={() => setView("demo")}>
-            Demo
-          </button>
-          <button aria-pressed={view === "project"} onClick={() => setView("project")}>
-            Proyecto
-          </button>
-        </div>
         <div className="project-browser-address" title={url}>
           <ShieldCheck size={14} aria-hidden="true" />
           <span>{new URL(url).hostname}</span>
         </div>
         <div className="project-browser-actions">
+          <button
+            className="project-browser-info"
+            aria-pressed={view === "project"}
+            onClick={() => setView(view === "demo" ? "project" : "demo")}
+          >
+            <PanelTop size={16} aria-hidden="true" />
+            {view === "demo" ? "Proyecto" : "Volver a demo"}
+          </button>
           <button
             className="project-browser-icon"
             aria-label="Recargar demo desde el inicio"
@@ -67,13 +71,13 @@ export function ProjectBrowser({
           >
             <ExternalLink size={16} aria-hidden="true" />
           </a>
-          {project.hasDetailPage && (
-            <Link className="project-browser-case" href={`/proyectos/${project.slug}`}>
-              Caso de estudio
-            </Link>
-          )}
         </div>
       </nav>
+  );
+
+  return (
+    <div className="project-browser">
+      {chromeHost ? createPortal(toolbar, chromeHost) : toolbar}
       <div className="project-browser-viewport" hidden={view !== "demo"}>
         {loading && !delayed && !failed && (
           <div className="project-browser-loading" role="status">

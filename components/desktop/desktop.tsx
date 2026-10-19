@@ -63,7 +63,7 @@ type AppWindow = {
 const newWindow = (id: string): AppWindow => ({
   id,
   minimized: false,
-  maximized: false,
+  maximized: projects.some((project) => project.slug === id && project.href.startsWith("/demos/")),
 });
 const iconPositionsKey = "ravettini-os-icon-positions";
 function defaultIconPositions(width: number, height: number): IconPositions {
@@ -1161,7 +1161,7 @@ export function Desktop({
                     drag.current = null;
                   }}
                   onDoubleClick={(e) => {
-                    if (!(e.target as HTMLElement).closest("button"))
+                    if (!(e.target as HTMLElement).closest("button,a"))
                       setWindows((prev) =>
                         prev.map((w) =>
                           w.id === win.id
@@ -1208,14 +1208,20 @@ export function Desktop({
                       <Maximize2 size={8} />
                     </button>
                   </div>
-                  <span className="window-title">
-                    {win.id === "welcome"
-                      ? "Notas"
-                      : applicationIcons[win.id]?.label}
-                  </span>
-                  <span className="window-bar-tail">
-                    <ChevronDown size={13} />
-                  </span>
+                  {isDemoProject ? (
+                    <div className="project-browser-chrome" id={`browser-chrome-${win.id}`} />
+                  ) : (
+                    <>
+                      <span className="window-title">
+                        {win.id === "welcome"
+                          ? "Notas"
+                          : applicationIcons[win.id]?.label}
+                      </span>
+                      <span className="window-bar-tail">
+                        <ChevronDown size={13} />
+                      </span>
+                    </>
+                  )}
                 </header>
                 <div className={`os-window-content${isDemoProject ? " os-window-content--browser" : ""}`}>{renderApp(win.id)}</div>
               </section>

@@ -25,7 +25,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Live project browser extension
 
-The user approved interactive demos inside project windows, replacing the enlarged screenshot as their default view. Five public, sanitized demos now open in a browser with Demo/Proyecto views, the configured hostname, reload, a new-tab link and case-study access. Switching views or minimizing preserves the live iframe; closing removes it. Other projects and full case studies retain their presentation. The browser follows the existing window chrome and responsive sheet, with usable desktop dimensions and a wrapping mobile toolbar. Captures in `.impeccable/review/project-browser-desktop.png` and `project-browser-mobile.png` document the actual result.
+The user approved interactive demos inside project windows. Five sanitized demos open maximized, edge-to-edge beneath the system menu, with one 56px unified macOS-style titlebar containing traffic lights, hostname, project toggle, reload and new-tab action. The green control restores a draggable floating browser without remounting the iframe. Project details retain the case-study link. Mobile omits the hostname and keeps 44px toolbar targets in the same single row. View switching and minimizing preserve navigation and forms; closing removes the iframe. Other projects and full case studies retain their presentation. Captures in `.impeccable/review/project-browser-desktop.png` and `project-browser-mobile.png` document the actual result.
 
 ## Startup and window-control extension
 
