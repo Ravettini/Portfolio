@@ -7,7 +7,8 @@
     "Mobile layout and external-tab fallback passed",
     "Slow-load retry notice and automatic recovery passed",
     "Standalone TypeScript and final production build passed",
-    "Dotacion entry hydration error fixed and new deployment READY"
+    "Dotacion entry hydration error fixed and new deployment READY",
+    "Background-frame activation and direct frame-to-frame focus switches passed"
   ],
   "images": "Playwright captures of the actual portfolio and synthetic-data apps",
   "verdict": "Ready to publish"

@@ -21,7 +21,8 @@
     "External-tab fallback points to the sanitized demo",
     "Mobile browser toolbar does not overflow",
     "Interactive demo fits mobile window",
-    "Closing browser removes the embedded demo"
+    "Closing browser removes the embedded demo",
+    "Clicks inside background demos activate their window, including direct frame-to-frame switches"
   ],
   "errors": []
 }

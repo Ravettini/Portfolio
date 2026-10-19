@@ -314,6 +314,8 @@ The five sanitized demo projects open directly in a browser window. The existing
 
 Only configured public demo URLs are embedded. The sandbox allows scripts, same-origin storage, forms, downloads and popups, with top navigation restricted. A neutral loading surface becomes a nonblocking retry/new-tab notice after 12 seconds. Other projects retain their screenshot presentation, and full case-study routes retain their original content. Gallery sizes now account for maximized windows, with image quality 90. Browser screenshots in `.impeccable/review/project-browser-desktop.png` and `project-browser-mobile.png` are Playwright captures of the actual portfolio and synthetic-data demo, not generated imagery.
 
+Clicking inside a background demo brings its OS window forward. The desktop observes the focused iframe while focus is inside embedded content, including direct switches between frames; observation stops when focus returns to the parent or the page becomes hidden.
+
 ### Appearance settings
 
 Settings offer light/dark surfaces, Océano/Medianoche wallpaper and reduced motion. Preferences persist in local storage when available. Selected appearance has a blue inset outline; wallpaper options show the actual wallpaper as swatches.

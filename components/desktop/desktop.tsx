@@ -171,6 +171,50 @@ export function Desktop({
       }),
     [],
   );
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    let watcher: ReturnType<typeof setInterval> | undefined;
+    let focusedFrame: HTMLIFrameElement | null = null;
+    const stop = () => {
+      clearTimeout(timer);
+      clearInterval(watcher);
+      focusedFrame = null;
+    };
+    // Pointer events inside a cross-origin frame do not bubble to its window.
+    const syncFrame = () => {
+      const frame = document.activeElement;
+      if (!(frame instanceof HTMLIFrameElement) || document.hidden) {
+        stop();
+        return;
+      }
+      if (frame === focusedFrame) return;
+      const host = frame.closest<HTMLElement>("[data-app-window]");
+      if (!host || host.hidden || !workspaceRef.current?.contains(host)) {
+        stop();
+        return;
+      }
+      focusedFrame = frame;
+      const id = host.dataset.appWindow;
+      if (id) focusWindow(id);
+    };
+    const watch = () => {
+      stop();
+      timer = setTimeout(() => {
+        syncFrame();
+        // Switching directly between frames does not blur the parent again.
+        if (focusedFrame) watcher = setInterval(syncFrame, 100);
+      }, 0);
+    };
+    window.addEventListener("blur", watch);
+    window.addEventListener("focus", stop);
+    document.addEventListener("visibilitychange", watch);
+    return () => {
+      stop();
+      window.removeEventListener("blur", watch);
+      window.removeEventListener("focus", stop);
+      document.removeEventListener("visibilitychange", watch);
+    };
+  }, [focusWindow]);
   const openApp = useCallback((id: string) => {
     setMenu(null);
     setSearching(false);
