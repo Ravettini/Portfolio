@@ -1,31 +1,31 @@
 {
   "acreditapp": {
     "projectId": "prj_1NqZhTGsUstZVs9TT5jzwNKnpcgz",
-    "deploymentId": "dpl_9oK2MBiuoQYvJvsMVryyJGn7b3E1",
+    "deploymentId": "dpl_q2SJzwNCTHnALeLHBqkgJPmLQpY9",
     "url": "https://ravettini-demo-acreditapp.vercel.app",
     "status": "READY"
   },
   "recursos-humanos": {
     "projectId": "prj_XgHeqJAPQpArLT6T5mrKPB02YrvE",
-    "deploymentId": "dpl_HUREgfkqRadTyNtGGf7FKBkTg7vq",
+    "deploymentId": "dpl_FVoRTqJHvkyDL7Ej618Sfdxk9xuy",
     "url": "https://ravettini-demo-recursos-humanos.vercel.app",
     "status": "READY"
   },
   "buscador-dotacion": {
     "projectId": "prj_GczLoP0lb3V0Vw3ksR29KPGQ47NJ",
-    "deploymentId": "dpl_DJxAPWVZyrQtFHSLNC82HUaRPDxp",
+    "deploymentId": "dpl_9zJwDvZrVQ2viP6GPKyPjkcWgsrz",
     "url": "https://ravettini-demo-buscador-dotacion.vercel.app",
     "status": "READY"
   },
   "produccion": {
     "projectId": "prj_xvZIAJfIVbf8IONjFbpVHyJtEUAx",
-    "deploymentId": "dpl_EZCFzadYr7XJqLsBcrhN66Eo2kmT",
+    "deploymentId": "dpl_JABickhaJVBbhjkNsA9idqijCaPv",
     "url": "https://ravettini-demo-produccion.vercel.app",
     "status": "READY"
   },
   "sigma": {
     "projectId": "prj_16jbs5MZ4FiHqwpg6entMatLJb1Q",
-    "deploymentId": "dpl_Eeo4sDgFck433hje8WwPG6oUsLWx",
+    "deploymentId": "dpl_EmPYjjHouepq2XCaWVV6umRy4HWN",
     "url": "https://ravettini-demo-sigma.vercel.app",
     "status": "READY"
   }

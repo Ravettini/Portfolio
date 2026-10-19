@@ -2,9 +2,9 @@
   "scope": "Demo welcome, UTF-8 and generic branding",
   "sourceArchives": {
     "acreditapp": {
-      "sourceFiles": 94,
+      "sourceFiles": 95,
       "archive": "acreditapp-source.zip",
-      "sha256": "6dc0ab929c03c27b1cdc3c29e9de1358b00de79662d49cb6658d8485fc29e6ff",
+      "sha256": "8e8590346fff49723377e62b0e1156cb7b3a70ec1f434ff33d0db856b5346f22",
       "build": "passed",
       "credentialsOrPrivateDataFindings": [],
       "encoding": "UTF-8",
@@ -12,9 +12,9 @@
       "welcomeIntroduction": true
     },
     "buscador-dotacion": {
-      "sourceFiles": 102,
+      "sourceFiles": 103,
       "archive": "buscador-dotacion-source.zip",
-      "sha256": "4faeafd68c92b01d4b35a6b01a6a7d5ef49ee227e62834d2415466d99ac37b2b",
+      "sha256": "fe8e482cf9d848df7a79372a22141dbd1588283aca12b16f656c1332ac6c8898",
       "build": "passed",
       "credentialsOrPrivateDataFindings": [],
       "encoding": "UTF-8",
@@ -22,9 +22,9 @@
       "welcomeIntroduction": true
     },
     "produccion": {
-      "sourceFiles": 96,
+      "sourceFiles": 97,
       "archive": "produccion-source.zip",
-      "sha256": "81e908e9a5c0213e107ebccd973af34ef846d2a7c0d9c94e47563f90b7ef9659",
+      "sha256": "2f4fed2a23ffac8bbdd57ab03dfbe6fb8a2acd3537da35059f3c531bfee69bb5",
       "build": "passed",
       "credentialsOrPrivateDataFindings": [],
       "encoding": "UTF-8",
@@ -32,9 +32,9 @@
       "welcomeIntroduction": true
     },
     "recursos-humanos": {
-      "sourceFiles": 135,
+      "sourceFiles": 137,
       "archive": "recursos-humanos-source.zip",
-      "sha256": "921c8dd40bbed689446e115713e54c4875fb64060ae8f7cf121e9d3fc0970836",
+      "sha256": "d2eea9f11c0338241d62866d0c5a2c6432cf78542aba42bb3f950014a5b720c0",
       "build": "passed",
       "credentialsOrPrivateDataFindings": [],
       "encoding": "UTF-8",
@@ -42,9 +42,9 @@
       "welcomeIntroduction": true
     },
     "sigma": {
-      "sourceFiles": 69,
+      "sourceFiles": 70,
       "archive": "sigma-source.zip",
-      "sha256": "99a887ff8c29afa44bfd0866eb3a4f17bb1c0e7adc9fcf97b7d264646a29bed5",
+      "sha256": "0ebff374c0d86ec146061209021e5cfbcf37108a3c61826cbdc13c3eb24a0c2c",
       "build": "passed",
       "credentialsOrPrivateDataFindings": [],
       "encoding": "UTF-8",
@@ -71,5 +71,6 @@
       "Theme toggle still works; no runtime errors"
     ]
   },
-  "dotacionEntryUpdate": "Removed nested buttons from workspace cards to avoid invalid HTML and hydration errors when opening the app entry route."
+  "dotacionEntryUpdate": "Removed nested buttons from workspace cards to avoid invalid HTML and hydration errors when opening the app entry route.",
+  "datasetVersion": 3
 }

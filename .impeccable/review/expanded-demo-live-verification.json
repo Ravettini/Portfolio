@@ -1,0 +1,56 @@
+{
+  "checks": [
+    "HR includes a populated team, route sheets and desk assignments",
+    "HR route sheets are visible in the actual UI",
+    "New route sheet persists after reloading",
+    "HR populated section works: /hojas-ruta/calendario?view=all",
+    "HR populated section works: /escritorios",
+    "HR populated section works: /vacaciones/admin",
+    "HR populated section works: /metricas",
+    "HR populated section works: /panel",
+    "HR populated section works: /reclamos/gestion",
+    "HR populated section works: /capacitaciones/equipo",
+    "Acreditapp includes 12 events and hundreds of registrations",
+    "Acreditapp accreditation persists against the expanded dataset",
+    "Production has 36 events and 144 requirements with history",
+    "Production event shows its associated requirements",
+    "Production duplication persists with the populated dataset",
+    "SIGMA contains a complete hierarchy and monthly submission history",
+    "SIGMA populated section works: /publicadas",
+    "SIGMA populated section works: /admin/tickets",
+    "SIGMA populated section works: /admin/auditoria",
+    "SIGMA populated section works: /mis-tickets",
+    "Dotacion includes 1200 synthetic directory records",
+    "Dotacion search filters the large dataset correctly",
+    "No runtime exceptions in populated demo flows"
+  ],
+  "errors": [],
+  "inventory": {
+    "rh": {
+      "people": 96,
+      "routeSheets": 2790,
+      "desks": 36,
+      "assignments": 868,
+      "vacations": 64,
+      "tickets": 24
+    },
+    "acreditapp": {
+      "events": 12,
+      "eventPeople": 1968
+    },
+    "produccion": {
+      "events": 36,
+      "proposals": 144
+    },
+    "sigma": {
+      "areas": 6,
+      "projects": 24,
+      "indicators": 72,
+      "submissions": 720,
+      "tickets": 15
+    },
+    "dotacion": {
+      "people": 1200
+    }
+  }
+}

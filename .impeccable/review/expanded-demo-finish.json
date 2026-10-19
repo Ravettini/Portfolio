@@ -1,0 +1,97 @@
+{
+  "scope": "Populated synthetic demo scenarios and local mutations for five portfolio apps",
+  "status": "Five deployments READY and verified live",
+  "datasetVersion": 3,
+  "inventory": {
+    "rh": {
+      "people": 96,
+      "routeSheets": 2790,
+      "desks": 36,
+      "assignments": 868,
+      "vacations": 64,
+      "tickets": 24
+    },
+    "acreditapp": {
+      "events": 12,
+      "eventPeople": 1968
+    },
+    "produccion": {
+      "events": 36,
+      "proposals": 144
+    },
+    "sigma": {
+      "areas": 6,
+      "projects": 24,
+      "indicators": 72,
+      "submissions": 720,
+      "tickets": 15
+    },
+    "dotacion": {
+      "people": 1200
+    }
+  },
+  "validation": [
+    "All five production builds passed",
+    "Populated route screens reviewed",
+    "Creation and persistence of HR route sheets tested locally and live",
+    "Accreditation, duplication, filtering and populated section flows passed locally and live",
+    "No runtime exceptions in checked flows",
+    "Curated source archives decode as UTF-8 and contain no env files or GCBA identifiers"
+  ],
+  "sourceArchives": {
+    "acreditapp": {
+      "sourceFiles": 95,
+      "archive": "acreditapp-source.zip",
+      "sha256": "8e8590346fff49723377e62b0e1156cb7b3a70ec1f434ff33d0db856b5346f22",
+      "build": "passed",
+      "credentialsOrPrivateDataFindings": [],
+      "encoding": "UTF-8",
+      "institutionalBrandingFindings": [],
+      "welcomeIntroduction": true
+    },
+    "buscador-dotacion": {
+      "sourceFiles": 103,
+      "archive": "buscador-dotacion-source.zip",
+      "sha256": "fe8e482cf9d848df7a79372a22141dbd1588283aca12b16f656c1332ac6c8898",
+      "build": "passed",
+      "credentialsOrPrivateDataFindings": [],
+      "encoding": "UTF-8",
+      "institutionalBrandingFindings": [],
+      "welcomeIntroduction": true
+    },
+    "produccion": {
+      "sourceFiles": 97,
+      "archive": "produccion-source.zip",
+      "sha256": "2f4fed2a23ffac8bbdd57ab03dfbe6fb8a2acd3537da35059f3c531bfee69bb5",
+      "build": "passed",
+      "credentialsOrPrivateDataFindings": [],
+      "encoding": "UTF-8",
+      "institutionalBrandingFindings": [],
+      "welcomeIntroduction": true
+    },
+    "recursos-humanos": {
+      "sourceFiles": 137,
+      "archive": "recursos-humanos-source.zip",
+      "sha256": "d2eea9f11c0338241d62866d0c5a2c6432cf78542aba42bb3f950014a5b720c0",
+      "build": "passed",
+      "credentialsOrPrivateDataFindings": [],
+      "encoding": "UTF-8",
+      "institutionalBrandingFindings": [],
+      "welcomeIntroduction": true
+    },
+    "sigma": {
+      "sourceFiles": 70,
+      "archive": "sigma-source.zip",
+      "sha256": "0ebff374c0d86ec146061209021e5cfbcf37108a3c61826cbdc13c3eb24a0c2c",
+      "build": "passed",
+      "credentialsOrPrivateDataFindings": [],
+      "encoding": "UTF-8",
+      "institutionalBrandingFindings": [],
+      "welcomeIntroduction": true
+    }
+  },
+  "limitations": [
+    "Private integrations and credentials remain disabled",
+    "SPA changes persist in local browser storage for the current day; scenarios refresh on a new day"
+  ]
+}
