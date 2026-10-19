@@ -42,9 +42,9 @@
       "welcomeIntroduction": true
     },
     "sigma": {
-      "sourceFiles": 70,
+      "sourceFiles": 69,
       "archive": "sigma-source.zip",
-      "sha256": "d47023e4197b3f148ca0a736eaf628db15fdc535f602b3f913340ca49e95a488",
+      "sha256": "99a887ff8c29afa44bfd0866eb3a4f17bb1c0e7adc9fcf97b7d264646a29bed5",
       "build": "passed",
       "credentialsOrPrivateDataFindings": [],
       "encoding": "UTF-8",
@@ -60,5 +60,15 @@
     "Portfolio standalone TypeScript and production build passed",
     "All archived text files decode as UTF-8; no GCBA or GCABA references in source archives"
   ],
-  "copy": "360+ people claim supplied by the portfolio author"
+  "copy": "360+ people claim supplied by the portfolio author",
+  "sigmaHeaderUpdate": {
+    "logo": "Compact vector sigma mark; 32px mobile and 36px desktop, contained inside header",
+    "brainrot": "Removed controls, split-screen video, store and CSS",
+    "validation": [
+      "Production build passed",
+      "Desktop and mobile checks passed locally and live",
+      "Legacy enabled preference has no effect",
+      "Theme toggle still works; no runtime errors"
+    ]
+  }
 }
