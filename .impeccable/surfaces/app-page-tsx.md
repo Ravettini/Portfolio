@@ -51,3 +51,8 @@ The user clarified the gesture further: while holding the pointer, the dragged i
 ## Functional OS utilities
 
 User requested real OS-style applications. Add a tenth desktop launcher, Utilidades, containing Paint (brush, eraser, color/width, bounded undo/redo, PNG download), keyboard calculator, locally saved Notepad with TXT download, and Buenos Aires clock with stopwatch and laps. Reuse established windows and icon system; preserve nine project launchers and portfolio goal. Utility windows retain state when minimized.
+
+
+### Resizable floating windows
+
+Desktop windows expose invisible pointer targets along all four edges and corners, with directional cursors and visible keyboard focus. Dragging changes the selected edges while opposite edges remain anchored; arrow keys move a focused edge by 10px, or 40px with Shift. Minimum dimensions are 320?220px (480px wide for embedded demo browsers). Windows remain within the workspace below the system menu and adapt when the viewport shrinks. Escape or pointer cancellation restores the previous geometry. Resizing retains mounted app and iframe state. Maximizing hides edge targets; restoring returns to the chosen size and position. Mobile retains its full-width application sheets. Verified screenshots and interaction evidence are in `.impeccable/review/window-resize-*`.

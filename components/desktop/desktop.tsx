@@ -34,6 +34,7 @@ import dynamic from "next/dynamic";
 import { projects } from "@/lib/projects";
 import { AppIcon, applicationIcons } from "./app-icon";
 import { ProjectApp } from "./project-app";
+import { resizeEdges, resizeWindowRect, type ResizeEdge, type WindowRect } from "@/lib/window-resize";
 import {
   UtilitiesFolder,
   PaintApp,
@@ -57,6 +58,8 @@ type AppWindow = {
   id: string;
   x?: number;
   y?: number;
+  width?: number;
+  height?: number;
   minimized: boolean;
   maximized: boolean;
 };
@@ -150,6 +153,15 @@ export function Desktop({
   const searchRef = useRef<HTMLInputElement>(null);
   const searchInvoker = useRef<HTMLElement | null>(null);
   const workspaceRef = useRef<HTMLElement>(null);
+  const [resizing, setResizing] = useState<ResizeEdge | null>(null);
+  const resizeGesture = useRef<{
+    original: AppWindow;
+    rect: WindowRect;
+    edge: ResizeEdge;
+    pointer: number;
+    startX: number;
+    startY: number;
+  } | null>(null);
   const drag = useRef<{
     id: string;
     pointer: number;
@@ -366,6 +378,10 @@ export function Desktop({
         else openSearch();
       }
       if (event.key === "Escape") {
+        if (resizeGesture.current) {
+          finishResize(true);
+          return;
+        }
         if (searching) dismissSearch();
         setMenu(null);
         setSelected([]);
@@ -417,26 +433,19 @@ export function Desktop({
             window.innerHeight,
           ),
         );
-      setWindows((prev) =>
-        prev.map((win) =>
-          win.x === undefined
-            ? win
-            : {
-                ...win,
-                x: Math.max(
-                  0,
-                  Math.min(
-                    win.x,
-                    window.innerWidth - Math.min(380, window.innerWidth),
-                  ),
-                ),
-                y: Math.max(
-                  38,
-                  Math.min(win.y || 38, window.innerHeight - 180),
-                ),
-              },
-        ),
-      );
+      setWindows((prev) => prev.map((win) => {
+        if (win.width !== undefined && window.innerWidth > 900) {
+          const next = resizeWindowRect({ left: win.x || 0, top: win.y || 38, width: win.width, height: win.height || 220 }, "e", 0, 0,
+            { width: window.innerWidth, height: window.innerHeight },
+            projects.some((project) => project.slug === win.id && project.href.startsWith("/demos/")) ? 480 : 320);
+          return { ...win, x: next.left, y: next.top, width: next.width, height: next.height };
+        }
+        return win.x === undefined ? win : {
+          ...win,
+          x: Math.max(0, Math.min(win.x, window.innerWidth - Math.min(380, window.innerWidth))),
+          y: Math.max(38, Math.min(win.y || 38, window.innerHeight - 180)),
+        };
+      }));
     };
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
@@ -478,6 +487,41 @@ export function Desktop({
       Math.min(window.innerHeight - 160, d.top + event.clientY - d.startY),
     );
     setWindows((prev) => prev.map((w) => (w.id === d.id ? { ...w, x, y } : w)));
+  }
+  function applyWindowResize(win: AppWindow, rect: WindowRect, edge: ResizeEdge, dx: number, dy: number) {
+    const isBrowser = projects.some((project) => project.slug === win.id && project.href.startsWith("/demos/"));
+    const next = resizeWindowRect(rect, edge, dx, dy, {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    }, isBrowser ? 480 : 320);
+    setWindows((prev) => prev.map((current) => current.id === win.id
+      ? { ...current, x: next.left, y: next.top, width: next.width, height: next.height }
+      : current));
+  }
+  function beginResize(event: ReactPointerEvent<HTMLButtonElement>, win: AppWindow, edge: ResizeEdge) {
+    if (event.button !== 0 || win.maximized || window.innerWidth <= 900) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const rect = event.currentTarget.closest<HTMLElement>(".os-window")!.getBoundingClientRect();
+    resizeGesture.current = { original: win, rect, edge, pointer: event.pointerId, startX: event.clientX, startY: event.clientY };
+    setResizing(edge);
+    focusWindow(win.id);
+    event.currentTarget.setPointerCapture(event.pointerId);
+  }
+  function moveResize(event: ReactPointerEvent<HTMLButtonElement>) {
+    const current = resizeGesture.current;
+    if (!current || current.pointer !== event.pointerId) return;
+    event.stopPropagation();
+    applyWindowResize(current.original, current.rect, current.edge, event.clientX - current.startX, event.clientY - current.startY);
+  }
+  function finishResize(cancel = false) {
+    const current = resizeGesture.current;
+    resizeGesture.current = null;
+    setResizing(null);
+    if (cancel && current) {
+      const { x, y, width, height } = current.original;
+      setWindows((prev) => prev.map((win) => win.id === current.original.id ? { ...win, x, y, width, height } : win));
+    }
   }
   function resetDesktop() {
     setWindows(window.innerWidth <= 900 ? [] : [newWindow("welcome")]);
@@ -809,7 +853,8 @@ export function Desktop({
       ref={workspaceRef}
       id="main"
       tabIndex={-1}
-      className={`os-desktop${dark ? " os-dark" : ""}${wallpaper === "midnight" ? " os-midnight" : ""}${reducedMotion ? " os-reduced-motion" : ""}${hasMaximizedWindow ? " os-desktop--immersive" : ""}${draggingIcon ? " os-desktop--icon-dragging" : ""}`}
+      className={`os-desktop${dark ? " os-dark" : ""}${wallpaper === "midnight" ? " os-midnight" : ""}${reducedMotion ? " os-reduced-motion" : ""}${hasMaximizedWindow ? " os-desktop--immersive" : ""}${draggingIcon ? " os-desktop--icon-dragging" : ""}${resizing ? " os-desktop--resizing" : ""}`}
+      style={resizing ? { cursor: `${resizing}-resize` } : undefined}
       data-ready={ready}
       onPointerDown={beginSelection}
       onPointerMove={moveSelection}
@@ -1125,6 +1170,7 @@ export function Desktop({
             );
             const style: CSSProperties = {
               zIndex: 20 + index,
+              ...(win.width !== undefined ? { width: win.width, height: win.height } : {}),
               ...(win.x !== undefined
                 ? { left: win.x, top: win.y, right: "auto" }
                 : {}),
@@ -1137,7 +1183,7 @@ export function Desktop({
                 tabIndex={-1}
                 hidden={win.minimized}
                 data-app-window={win.id}
-                className={`os-window os-window--${win.id}${isProject ? " os-window--project" : ""}${isDemoProject ? " os-window--browser" : ""}${active === win.id ? " os-window--active" : ""}${win.maximized ? " os-window--maximized" : ""}`}
+                className={`os-window os-window--${win.id}${isProject ? " os-window--project" : ""}${isDemoProject ? " os-window--browser" : ""}${active === win.id ? " os-window--active" : ""}${win.maximized ? " os-window--maximized" : ""}${win.width !== undefined ? " os-window--resized" : ""}`}
                 style={style}
                 onPointerDown={(event) => {
                   if ((event.target as HTMLElement).closest(".window-controls"))
@@ -1224,6 +1270,30 @@ export function Desktop({
                   )}
                 </header>
                 <div className={`os-window-content${isDemoProject ? " os-window-content--browser" : ""}`}>{renderApp(win.id)}</div>
+                {!win.maximized && isDesktop && resizeEdges.map((edge) => (
+                  <button
+                    key={edge}
+                    className={`os-window-resize os-window-resize--${edge}`}
+                    data-resize-edge={edge}
+                    aria-label={`Ajustar ${applicationIcons[win.id]?.label || win.id} desde ${({ n: "arriba", e: "la derecha", s: "abajo", w: "la izquierda", ne: "la esquina superior derecha", se: "la esquina inferior derecha", sw: "la esquina inferior izquierda", nw: "la esquina superior izquierda" })[edge]}`}
+                    onPointerDown={(event) => beginResize(event, win, edge)}
+                    onPointerMove={moveResize}
+                    onPointerUp={() => finishResize()}
+                    onPointerCancel={() => finishResize(true)}
+                    onLostPointerCapture={() => finishResize()}
+                    onKeyDown={(event) => {
+                      if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) return;
+                      event.preventDefault();
+                      event.stopPropagation();
+                      const step = event.shiftKey ? 40 : 10;
+                      const rect = event.currentTarget.closest<HTMLElement>(".os-window")!.getBoundingClientRect();
+                      focusWindow(win.id);
+                      applyWindowResize(win, rect, edge,
+                        event.key === "ArrowRight" ? step : event.key === "ArrowLeft" ? -step : 0,
+                        event.key === "ArrowDown" ? step : event.key === "ArrowUp" ? -step : 0);
+                    }}
+                  />
+                ))}
               </section>
             );
           })}

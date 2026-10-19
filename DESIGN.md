@@ -358,3 +358,8 @@ Demo apps launch maximized, filling the workspace below the 34px system menu (38
 
 
 Demo information lives inside each app as an inline Demo control, replacing the former fixed information banner and corner button. The introduction contains the synthetic-data notice and confirmed reset action. Embedded demos allow native confirmation dialogs so cancellation preserves changes and confirmed reset restores the sample dataset.
+
+
+### Resizable floating windows
+
+Desktop windows expose invisible pointer targets along all four edges and corners, with directional cursors and visible keyboard focus. Dragging changes the selected edges while opposite edges remain anchored; arrow keys move a focused edge by 10px, or 40px with Shift. Minimum dimensions are 320?220px (480px wide for embedded demo browsers). Windows remain within the workspace below the system menu and adapt when the viewport shrinks. Escape or pointer cancellation restores the previous geometry. Resizing retains mounted app and iframe state. Maximizing hides edge targets; restoring returns to the chosen size and position. Mobile retains its full-width application sheets. Verified screenshots and interaction evidence are in `.impeccable/review/window-resize-*`.

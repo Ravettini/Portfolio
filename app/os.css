@@ -2198,3 +2198,22 @@
     border-radius: 0;
   }
 }
+
+/* Native-style edge targets: visually quiet until focused, above embedded apps. */
+.os-window.os-window--resized:not(.os-window--maximized) { min-width: 0; max-height: none; }
+.os-window-resize { position: absolute; z-index: 5; display: block; padding: 0; border: 0; border-radius: 0; background: transparent; touch-action: none; user-select: none; }
+.os-window-resize--n, .os-window-resize--s { left: 16px; right: 16px; height: 6px; }
+.os-window-resize--e, .os-window-resize--w { top: 16px; bottom: 16px; width: 6px; }
+.os-window-resize--n { top: 0; cursor: n-resize; }
+.os-window-resize--s { bottom: 0; cursor: s-resize; }
+.os-window-resize--e { right: 0; cursor: e-resize; }
+.os-window-resize--w { left: 0; cursor: w-resize; }
+.os-window-resize--ne, .os-window-resize--se, .os-window-resize--sw, .os-window-resize--nw { width: 16px; height: 16px; }
+.os-window-resize--ne { top: 0; right: 0; cursor: ne-resize; }
+.os-window-resize--se { bottom: 0; right: 0; cursor: se-resize; }
+.os-window-resize--sw { bottom: 0; left: 0; cursor: sw-resize; }
+.os-window-resize--nw { top: 0; left: 0; cursor: nw-resize; }
+.os-window-resize:focus-visible { outline: 2px solid var(--os-blue); outline-offset: -2px; background: var(--os-soft); }
+.os-desktop--resizing, .os-desktop--resizing * { user-select: none !important; cursor: inherit !important; }
+.os-desktop--resizing iframe { pointer-events: none; }
+@media (max-width: 900px) { .os-window-resize { display: none; } }
