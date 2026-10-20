@@ -1,0 +1,31 @@
+{
+  "checks": [
+    "Bottom side slots available at 1536x666",
+    "Dock and search area excluded at 1536x666",
+    "Saved layout avoids occupied and reserved cells at 1536x666",
+    "Group respects dock reservation at 1536x666",
+    "Bottom side slots available at 1536x704",
+    "Dock and search area excluded at 1536x704",
+    "Saved layout avoids occupied and reserved cells at 1536x704",
+    "Group respects dock reservation at 1536x704",
+    "Bottom side slots available at 1440x960",
+    "Dock and search area excluded at 1440x960",
+    "Saved layout avoids occupied and reserved cells at 1440x960",
+    "Group respects dock reservation at 1440x960",
+    "Bottom side slots available at 901x580",
+    "Dock and search area excluded at 901x580",
+    "Saved layout avoids occupied and reserved cells at 901x580",
+    "Group respects dock reservation at 901x580",
+    "Pointer drag reaches formerly blocked bottom row",
+    "Bottom row position survives reload",
+    "Lower-right desktop slots are also available",
+    "Drop over dock resolves to a nearby free slot",
+    "Keyboard reaches bottom row without overlapping another icon",
+    "Group movement preserves formation in bottom slots",
+    "Dock growth relocates newly covered icon",
+    "Growing dock repacks any icons it would cover",
+    "Viewport resize preserves accessible slots and dock clearance",
+    "No runtime exceptions"
+  ],
+  "errors": []
+}

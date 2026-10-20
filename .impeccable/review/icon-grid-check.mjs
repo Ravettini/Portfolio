@@ -1,13 +1,13 @@
 import { chromium } from '../tools/node_modules/playwright/index.mjs';
 import { desktopGrid, normalizeDesktopIcons, placeDesktopIcon } from '../../lib/desktop-grid.ts';
 import fs from 'node:fs/promises';
-const ids = ['acreditapp','recursos-humanos-ssccrs','buscador-dotacion-gcba','v-mail-validator','acqua-di-colbert','sigma','dermatologia-tod','simulacro-entrevistas','media-compressor','utilities','doom'];
+const ids = ['acreditapp','recursos-humanos-ssccrs','buscador-dotacion-gcba','v-mail-validator','acqua-di-colbert','sigma','dermatologia-tod','simulacro-entrevistas','media-compressor','utilities','doom','produccion-eventos','spaceweb','sofijobs-cv-analyzer'];
 const checks = [], errors = [];
 const assert = (condition, message) => { if (!condition) throw new Error(message); checks.push(message); };
 function valid(positions, width, height) {
   const grid = desktopGrid(width, height);
   const values = Object.values(positions);
-  return new Set(values.map(p => `${p.x},${p.y}`)).size === ids.length && values.every(p => Number.isInteger((p.x-grid.x)/grid.columnWidth) && Number.isInteger((p.y-grid.y)/grid.rowHeight) && p.x >= grid.x && p.y >= grid.y && p.x + 94 <= width && p.y + 94 <= Math.max(height,580)-120);
+  return new Set(values.map(p => `${p.x},${p.y}`)).size === ids.length && values.every(p => Number.isInteger((p.x-grid.x)/grid.columnWidth) && Number.isInteger((p.y-grid.y)/grid.rowHeight) && p.x >= grid.x && p.y >= grid.y && p.x + 94 <= width && p.y + 94 <= Math.max(height,580)-12);
 }
 for (const [width,height] of [[1440,960],[1536,704],[1920,880],[901,580],[901,300]]) {
   const legacy = Object.fromEntries(ids.map(id => [id, {x:57.2,y:345.6}]));
@@ -16,7 +16,7 @@ for (const [width,height] of [[1440,960],[1536,704],[1920,880],[901,580],[901,30
   positions.sigma = placeDesktopIcon('sigma',positions.acreditapp,positions,width,height);
   assert(valid(positions,width,height), `Occupied-cell placement never overlaps at ${width}x${height}`);
 }
-const browser = await chromium.launch({ executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', headless:true });
+const browser = await chromium.launch({ executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe', headless:true });
 const page = await browser.newPage({ viewport:{width:1440,height:960}, reducedMotion:'reduce' });
 page.on('pageerror',e=>errors.push(e.message));
 await page.addInitScript(({ids}) => {
@@ -26,7 +26,7 @@ await page.addInitScript(({ids}) => {
     sessionStorage.setItem('grid-test-seeded','true');
   }
 }, {ids});
-const baseURL = process.env.PORTFOLIO_TEST_URL || 'http://localhost:3000';
+const baseURL = process.env.PORTFOLIO_TEST_URL || 'http://localhost:3001';
 await page.goto(baseURL,{waitUntil:'networkidle'});
 await page.locator('.os-session[data-phase="desktop"]').waitFor();
 await page.getByRole('button',{name:'Cerrar Bienvenida',exact:true}).click();

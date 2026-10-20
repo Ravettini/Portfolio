@@ -50,6 +50,7 @@ import {
   moveDesktopIcon,
   type IconPosition,
   type IconPositions,
+  type DesktopObstacle,
 } from "@/lib/desktop-grid";
 
 const DoomApp = dynamic(() => import("./doom-app"), { ssr: false });
@@ -69,8 +70,25 @@ const newWindow = (id: string): AppWindow => ({
   maximized: projects.some((project) => project.slug === id && project.href.startsWith("/demos/")),
 });
 const iconPositionsKey = "ravettini-os-icon-positions";
+function desktopObstacles(): DesktopObstacle[] {
+  if (typeof document === "undefined") return [];
+  const areas: DesktopObstacle[] = [];
+  const dock = document.querySelector<HTMLElement>(".os-dock");
+  if (dock?.offsetWidth) areas.push({
+    x: dock.offsetLeft - dock.offsetWidth / 2,
+    y: dock.offsetTop,
+    width: dock.offsetWidth,
+    height: dock.offsetHeight,
+  });
+  const hint = document.querySelector<HTMLElement>(".desktop-hint");
+  if (hint?.offsetWidth) {
+    const rect = hint.getBoundingClientRect();
+    areas.push({ x: rect.left, y: rect.top, width: rect.width, height: rect.height });
+  }
+  return areas;
+}
 function defaultIconPositions(width: number, height: number): IconPositions {
-  return defaultDesktopIcons(desktopOrder, width, height);
+  return defaultDesktopIcons(desktopOrder, width, height, desktopObstacles());
 }
 const dockApps = ["profile", "contact", "terminal", "cv", "settings"];
 const desktopOrder = [
@@ -291,6 +309,7 @@ export function Desktop({
         saved,
         window.innerWidth,
         window.innerHeight,
+        desktopObstacles(),
       );
     } catch {
       /* Default layout remains available without storage. */
@@ -433,6 +452,7 @@ export function Desktop({
             prev,
             window.innerWidth,
             window.innerHeight,
+            desktopObstacles(),
           ),
         );
       setWindows((prev) => prev.map((win) => {
@@ -450,7 +470,16 @@ export function Desktop({
       }));
     };
     window.addEventListener("resize", resize);
-    return () => window.removeEventListener("resize", resize);
+    const observer = new ResizeObserver(() => {
+      if (window.innerWidth > 900) setIconPositions((prev) => normalizeDesktopIcons(
+        desktopOrder, prev, window.innerWidth, window.innerHeight, desktopObstacles(),
+      ));
+    });
+    document.querySelectorAll(".os-dock, .desktop-hint").forEach((element) => observer.observe(element));
+    return () => {
+      window.removeEventListener("resize", resize);
+      observer.disconnect();
+    };
   }, []);
 
   function beginDrag(event: ReactPointerEvent<HTMLElement>, win: AppWindow) {
@@ -582,7 +611,7 @@ export function Desktop({
       38 - Math.min(...values.map((p) => p.y)),
       Math.min(
         Math.max(580, window.innerHeight) -
-          140 -
+          106 -
           Math.max(...values.map((p) => p.y)),
         dy,
       ),
@@ -608,6 +637,7 @@ export function Desktop({
             prev,
             window.innerWidth,
             window.innerHeight,
+            desktopObstacles(),
           ),
         );
     }
@@ -1109,6 +1139,7 @@ export function Desktop({
                   prev,
                   window.innerWidth,
                   window.innerHeight,
+                  desktopObstacles(),
                 ),
               }));
             }}

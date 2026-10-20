@@ -1,5 +1,12 @@
 export type IconPosition = { x: number; y: number };
 export type IconPositions = Record<string, IconPosition>;
+export type DesktopObstacle = IconPosition & { width: number; height: number };
+
+function isFreeSlot(position: IconPosition, obstacles: DesktopObstacle[]) {
+  return !obstacles.some((area) => position.x < area.x + area.width + 8 &&
+    position.x + 94 > area.x - 8 && position.y < area.y + area.height + 8 &&
+    position.y + 94 > area.y - 8);
+}
 
 export function desktopGrid(width: number, height: number) {
   height = Math.max(580, height);
@@ -13,7 +20,7 @@ export function desktopGrid(width: number, height: number) {
     columnWidth,
     rowHeight,
     columns: Math.max(1, Math.floor((width - x - 102) / columnWidth) + 1),
-    rows: Math.max(1, Math.floor((height - 214 - y) / rowHeight) + 1),
+    rows: Math.max(1, Math.floor((height - 94 - 12 - y) / rowHeight) + 1),
   };
 }
 
@@ -23,6 +30,7 @@ export function placeDesktopIcon(
   positions: IconPositions,
   width: number,
   height: number,
+  obstacles: DesktopObstacle[] = [],
 ): IconPosition {
   const grid = desktopGrid(width, height);
   const occupied = new Set(
@@ -38,7 +46,7 @@ export function placeDesktopIcon(
         x: grid.x + column * grid.columnWidth,
         y: grid.y + row * grid.rowHeight,
       };
-      if (occupied.has(`${position.x},${position.y}`)) continue;
+      if (occupied.has(`${position.x},${position.y}`) || !isFreeSlot(position, obstacles)) continue;
       const candidateDistance =
         (position.x - desired.x) ** 2 + (position.y - desired.y) ** 2;
       if (candidateDistance < distance) {
@@ -54,18 +62,18 @@ export function defaultDesktopIcons(
   ids: string[],
   width: number,
   height: number,
+  obstacles: DesktopObstacle[] = [],
 ): IconPositions {
   const grid = desktopGrid(width, height);
   const rows = Math.min(5, grid.rows);
-  return Object.fromEntries(
-    ids.map((id, index) => [
-      id,
-      {
+  const positions: IconPositions = {};
+  ids.forEach((id, index) => {
+    positions[id] = placeDesktopIcon(id, {
         x: grid.x + Math.floor(index / rows) * grid.columnWidth,
         y: grid.y + (index % rows) * grid.rowHeight,
-      },
-    ]),
-  );
+      }, positions, width, height, obstacles);
+  });
+  return positions;
 }
 
 export function normalizeDesktopIcons(
@@ -73,15 +81,16 @@ export function normalizeDesktopIcons(
   saved: IconPositions,
   width: number,
   height: number,
+  obstacles: DesktopObstacle[] = [],
 ): IconPositions {
-  const defaults = defaultDesktopIcons(ids, width, height);
+  const defaults = defaultDesktopIcons(ids, width, height, obstacles);
   const positions: IconPositions = {};
   for (const id of ids) {
     const desired =
       Number.isFinite(saved?.[id]?.x) && Number.isFinite(saved?.[id]?.y)
         ? saved[id]
         : defaults[id];
-    positions[id] = placeDesktopIcon(id, desired, positions, width, height);
+    positions[id] = placeDesktopIcon(id, desired, positions, width, height, obstacles);
   }
   return positions;
 }
@@ -93,6 +102,7 @@ export function moveDesktopIcon(
   positions: IconPositions,
   width: number,
   height: number,
+  obstacles: DesktopObstacle[] = [],
 ): IconPosition {
   const grid = desktopGrid(width, height);
   const original = positions[id];
@@ -108,7 +118,7 @@ export function moveDesktopIcon(
       x: grid.x + column * grid.columnWidth,
       y: grid.y + row * grid.rowHeight,
     };
-    if (!occupied.has(`${position.x},${position.y}`)) return position;
+    if (!occupied.has(`${position.x},${position.y}`) && isFreeSlot(position, obstacles)) return position;
     column += Math.sign(dx);
     row += Math.sign(dy);
   }
@@ -121,6 +131,7 @@ export function placeDesktopGroup(
   positions: IconPositions,
   width: number,
   height: number,
+  obstacles: DesktopObstacle[] = [],
 ): IconPositions {
   if (ids.length === 1)
     return {
@@ -131,6 +142,7 @@ export function placeDesktopGroup(
         positions,
         width,
         height,
+        obstacles,
       ),
     };
   const grid = desktopGrid(width, height);
@@ -161,6 +173,7 @@ export function placeDesktopGroup(
             p.y < grid.y ||
             p.x > grid.x + (grid.columns - 1) * grid.columnWidth ||
             p.y > grid.y + (grid.rows - 1) * grid.rowHeight ||
+            !isFreeSlot(p, obstacles) ||
             occupied.has(`${p.x},${p.y}`),
         )
       )
@@ -175,6 +188,6 @@ export function placeDesktopGroup(
   if (best) return { ...fixed, ...best };
   const placed = { ...fixed };
   for (const id of ids)
-    placed[id] = placeDesktopIcon(id, desired[id], placed, width, height);
+    placed[id] = placeDesktopIcon(id, desired[id], placed, width, height, obstacles);
   return placed;
 }

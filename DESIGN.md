@@ -372,3 +372,8 @@ The five demos use their original local favicons as desktop and application icon
 Spaceweb and Analizador de CVs Sofijobs are available from the desktop, project list, search and terminal, with their supplied external links. Descriptions follow the sites' public metadata; no client, date or outcome was invented. New launcher slots are appended so saved positions of existing icons survive.
 
 Project presentations other than the five demo browsers open centered on desktop. Independent CSS translation centers their initial geometry without competing with the window entrance animation; explicit position takes over once dragged or resized. Maximizing, restoring, responsive mobile sheets and the five maximized demo browsers retain their behavior.
+
+
+### Lower desktop grid slots
+
+The grid now extends to 12px above the workspace bottom instead of reserving a full-width strip for the dock. Only cells overlapping the actual dock or search hint, with an 8px clearance, are excluded. Pointer drop, keyboard movement, group placement, stored-layout normalization and default placement share those reservations. The drag preview reaches the lower cells, and saved lower positions survive reload. A ResizeObserver repacks affected icons when dock or hint dimensions change, including minimized applications expanding the dock. Verification covers four desktop sizes, lower-left/right placement, persistence, keyboard/group movement, dock growth, viewport changes and legacy overlapping layouts.
