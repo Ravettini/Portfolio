@@ -86,6 +86,8 @@ const desktopOrder = [
   "media-compressor",
   "utilities",
   "doom",
+  "spaceweb",
+  "sofijobs-cv-analyzer",
 ];
 const anchorApps: Record<string, string> = {
   inicio: "welcome",
@@ -682,7 +684,7 @@ export function Desktop({
   }
   const filteredApps = Object.entries(applicationIcons).filter(
     ([id, app]) =>
-      `${app.label} ${projects.find((p) => p.slug === id)?.tech.join(" ") || ""}`
+      `${app.label} ${projects.find((p) => p.slug === id)?.title || ""} ${projects.find((p) => p.slug === id)?.tech.join(" ") || ""}`
         .toLocaleLowerCase("es")
         .includes(query.toLocaleLowerCase("es")) &&
       !["experience", "skills"].includes(id),
@@ -1183,7 +1185,7 @@ export function Desktop({
                 tabIndex={-1}
                 hidden={win.minimized}
                 data-app-window={win.id}
-                className={`os-window os-window--${win.id}${isProject ? " os-window--project" : ""}${isDemoProject ? " os-window--browser" : ""}${active === win.id ? " os-window--active" : ""}${win.maximized ? " os-window--maximized" : ""}${win.width !== undefined ? " os-window--resized" : ""}`}
+                className={`os-window os-window--${win.id}${isProject ? " os-window--project" : ""}${isDemoProject ? " os-window--browser" : ""}${active === win.id ? " os-window--active" : ""}${win.maximized ? " os-window--maximized" : ""}${win.width !== undefined ? " os-window--resized" : ""}${win.x !== undefined ? " os-window--positioned" : ""}`}
                 style={style}
                 onPointerDown={(event) => {
                   if ((event.target as HTMLElement).closest(".window-controls"))

@@ -363,3 +363,12 @@ Demo information lives inside each app as an inline Demo control, replacing the 
 ### Resizable floating windows
 
 Desktop windows expose invisible pointer targets along all four edges and corners, with directional cursors and visible keyboard focus. Dragging changes the selected edges while opposite edges remain anchored; arrow keys move a focused edge by 10px, or 40px with Shift. Minimum dimensions are 320?220px (480px wide for embedded demo browsers). Windows remain within the workspace below the system menu and adapt when the viewport shrinks. Escape or pointer cancellation restores the previous geometry. Resizing retains mounted app and iframe state. Maximizing hides edge targets; restoring returns to the chosen size and position. Mobile retains its full-width application sheets. Verified screenshots and interaction evidence are in `.impeccable/review/window-resize-*`.
+
+
+### Application favicons and additional projects
+
+The five demos use their original local favicons as desktop and application icons, preserving their artwork inside the existing 48px slots. Spaceweb uses its published favicon; Sofijobs CV uses the established document-search icon. Asset provenance is recorded in `.impeccable/assets/project-favicons.json`.
+
+Spaceweb and Analizador de CVs Sofijobs are available from the desktop, project list, search and terminal, with their supplied external links. Descriptions follow the sites' public metadata; no client, date or outcome was invented. New launcher slots are appended so saved positions of existing icons survive.
+
+Project presentations other than the five demo browsers open centered on desktop. Independent CSS translation centers their initial geometry without competing with the window entrance animation; explicit position takes over once dragged or resized. Maximizing, restoring, responsive mobile sheets and the five maximized demo browsers retain their behavior.

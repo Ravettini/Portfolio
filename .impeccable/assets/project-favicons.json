@@ -1,0 +1,32 @@
+{
+  "acreditapp.png": {
+    "asset": "/desktop/project-icons/acreditapp.png",
+    "sha256": "7bd8f2b7777efaca6798d196f0b6ee00a400950f3f02831a3dc4d3595e6041ab",
+    "source": "Original application favicon, copied without edits"
+  },
+  "buscador-dotacion.svg": {
+    "asset": "/desktop/project-icons/buscador-dotacion.svg",
+    "sha256": "8643a03089b103350d5118e59cf886b0a3cec8b81880dc280170406acfca7353",
+    "source": "Original application favicon, copied without edits"
+  },
+  "produccion.png": {
+    "asset": "/desktop/project-icons/produccion.png",
+    "sha256": "9579fa08f4f89236ff2383820e5f1545534c1c691e3f2d1edce1754cbfd59822",
+    "source": "Original application favicon, copied without edits"
+  },
+  "recursos-humanos.png": {
+    "asset": "/desktop/project-icons/recursos-humanos.png",
+    "sha256": "cb6beb6bf3108378554071ac637364a7fad1ca1e5bf904fdffb599f066fb3ea4",
+    "source": "Original application favicon, copied without edits"
+  },
+  "sigma.png": {
+    "asset": "/desktop/project-icons/sigma.png",
+    "sha256": "d448b1f9b5a6a67883537c564d4f9d4fe6b84710b04eae5838eb6f26e101f5aa",
+    "source": "Original application favicon, copied without edits"
+  },
+  "spaceweb.svg": {
+    "asset": "/desktop/project-icons/spaceweb.svg",
+    "sha256": "d490abff99721675d973fc9139884dfba7ba18cea5825df12ae5971882677fa1",
+    "source": "https://spaceweb2.vercel.app/favicon.svg"
+  }
+}

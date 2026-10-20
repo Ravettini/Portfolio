@@ -11,6 +11,8 @@ import {
   Droplet,
   FileText,
   FolderOpen,
+  Rocket,
+  FileSearch,
   MailCheck,
   Monitor,
   Search,
@@ -28,24 +30,27 @@ import {
 
 export const applicationIcons: Record<
   string,
-  { icon: LucideIcon; color: string; label: string }
+  { icon: LucideIcon; color: string; label: string; image?: string }
 > = {
-  acreditapp: { icon: BadgeCheck, color: "blue", label: "Acreditapp" },
-  sigma: { icon: Sigma, color: "violet", label: "SIGMA" },
+  acreditapp: { icon: BadgeCheck, color: "blue", label: "Acreditapp", image: "/desktop/project-icons/acreditapp.png" },
+  sigma: { icon: Sigma, color: "violet", label: "SIGMA", image: "/desktop/project-icons/sigma.png" },
   "produccion-eventos": {
     icon: BriefcaseBusiness,
     color: "teal",
     label: "Producción",
+    image: "/desktop/project-icons/produccion.png",
   },
   "recursos-humanos-ssccrs": {
     icon: UsersRound,
     color: "green",
     label: "Recursos Humanos",
+    image: "/desktop/project-icons/recursos-humanos.png",
   },
   "buscador-dotacion-gcba": {
     icon: Search,
     color: "amber",
     label: "Buscador Dotación",
+    image: "/desktop/project-icons/buscador-dotacion.svg",
   },
   "dermatologia-tod": {
     icon: Stethoscope,
@@ -72,6 +77,8 @@ export const applicationIcons: Record<
     color: "sky",
     label: "Acqua Di Colbert",
   },
+  spaceweb: { icon: Rocket, color: "terminal", label: "Spaceweb", image: "/desktop/project-icons/spaceweb.svg" },
+  "sofijobs-cv-analyzer": { icon: FileSearch, color: "violet", label: "Sofijobs CV" },
   welcome: { icon: StickyNote, color: "paper", label: "Bienvenida" },
   profile: { icon: UserRound, color: "paper", label: "Perfil" },
   contact: { icon: Send, color: "blue", label: "Contacto" },
@@ -100,10 +107,12 @@ export function AppIcon({
   const Icon = app.icon;
   return (
     <span
-      className={`app-icon app-icon--${id === "doom" ? "doom" : app.color}${small ? " app-icon--small" : ""}`}
+      className={`app-icon app-icon--${id === "doom" ? "doom" : app.color}${app.image ? " app-icon--image" : ""}${small ? " app-icon--small" : ""}`}
       aria-hidden="true"
     >
-      {id === "doom" ? (
+      {app.image ? (
+        <Image src={app.image} alt="" width={192} height={192} sizes={small ? "32px" : "48px"} draggable={false} />
+      ) : id === "doom" ? (
         <Image src="/games/doom/logo.png" alt="" width={603} height={368} sizes={small ? "32px" : "48px"} draggable={false} />
       ) : <Icon strokeWidth={1.65} />}
     </span>
