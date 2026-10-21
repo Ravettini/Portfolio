@@ -75,3 +75,8 @@ The grid now extends to 12px above the workspace bottom instead of reserving a f
 ### Fixed mobile dock after desktop arrival
 
 The desktop entrance animation no longer retains transform or filter after completing: its final frame uses none and its fill mode is backwards. This keeps the mobile system menu, dock and application sheets attached to the viewport instead of a transformed scrolling ancestor. The mobile dock fits within 12px side margins, caps at 360px, and distributes its five buttons with at least 44px targets; icon dimensions adapt from 36px to 43px. Existing bottom safe-area spacing and scroll padding remain. Verification includes normal and reduced motion, 320/375/390px portrait, 844px landscape, scroll-to-bottom, menu anchoring, opening applications from the scrolled dock and unchanged desktop geometry.
+
+
+### Laptop user-selection fit and persistent blur
+
+The user-selection screen follows the dynamic viewport height and uses compact clock, avatar, spacing and footer treatment below 800px tall. Laptop layouts fit the entire selection and footer without scrolling. Content sections do not shrink over their controls; very short screens retain accessible scrolling rather than clipping actions. Footer targets are at least 44px high. The blur overlay is viewport-fixed, so scrolling cannot reveal a sharp strip of wallpaper. Verified at 1536?704, 1366?617, 1280?570, 1920?880, two mobile sizes and short landscape, including keyboard entry and switching users.
