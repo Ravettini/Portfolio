@@ -95,8 +95,8 @@ const desktopOrder = [
   "acreditapp",
   "recursos-humanos-ssccrs",
   "buscador-dotacion-gcba",
-  "v-mail-validator",
-  "acqua-di-colbert",
+  "sofijobs-cv-analyzer",
+  "spaceweb",
   "sigma",
   "produccion-eventos",
   "dermatologia-tod",
@@ -104,8 +104,8 @@ const desktopOrder = [
   "media-compressor",
   "utilities",
   "doom",
-  "spaceweb",
-  "sofijobs-cv-analyzer",
+  "acqua-di-colbert",
+  "v-mail-validator",
 ];
 const anchorApps: Record<string, string> = {
   inicio: "welcome",
