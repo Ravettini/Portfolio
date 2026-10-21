@@ -1790,17 +1790,20 @@
   .os-dock {
     position: fixed;
     bottom: max(14px, env(safe-area-inset-bottom));
+    width: min(360px, calc(100% - 24px));
+    max-width: calc(100% - 24px);
     height: 83px;
     padding: 11px 12px 8px;
-    gap: 9px;
+    gap: clamp(4px, 2vw, 9px);
     border-radius: 18px;
   }
   .dock-app {
-    min-width: 48px;
+    min-width: 44px;
+    flex: 1;
   }
   .dock-app > .app-icon {
-    width: 43px;
-    height: 43px;
+    width: clamp(36px, 11vw, 43px);
+    height: clamp(36px, 11vw, 43px);
     border-radius: 11px;
   }
   .dock-app > .app-icon svg {

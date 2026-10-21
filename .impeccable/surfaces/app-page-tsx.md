@@ -70,3 +70,8 @@ Project presentations other than the five demo browsers open centered on desktop
 ### Lower desktop grid slots
 
 The grid now extends to 12px above the workspace bottom instead of reserving a full-width strip for the dock. Only cells overlapping the actual dock or search hint, with an 8px clearance, are excluded. Pointer drop, keyboard movement, group placement, stored-layout normalization and default placement share those reservations. The drag preview reaches the lower cells, and saved lower positions survive reload. A ResizeObserver repacks affected icons when dock or hint dimensions change, including minimized applications expanding the dock. Verification covers four desktop sizes, lower-left/right placement, persistence, keyboard/group movement, dock growth, viewport changes and legacy overlapping layouts.
+
+
+### Fixed mobile dock after desktop arrival
+
+The desktop entrance animation no longer retains transform or filter after completing: its final frame uses none and its fill mode is backwards. This keeps the mobile system menu, dock and application sheets attached to the viewport instead of a transformed scrolling ancestor. The mobile dock fits within 12px side margins, caps at 360px, and distributes its five buttons with at least 44px targets; icon dimensions adapt from 36px to 43px. Existing bottom safe-area spacing and scroll padding remain. Verification includes normal and reduced motion, 320/375/390px portrait, 844px landscape, scroll-to-bottom, menu anchoring, opening applications from the scrolled dock and unchanged desktop geometry.
