@@ -48,8 +48,6 @@
 .boot-center {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
-  min-height: 0;
   align-items: center;
   padding-bottom: 45px;
   animation: boot-mark-arrival 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -117,6 +115,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: 100dvh;
+  min-height: 0;
   background: #082058 url("/desktop/ocean-wallpaper.webp") center / cover;
   animation: login-arrival 500ms ease-out both;
 }

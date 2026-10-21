@@ -387,3 +387,6 @@ The desktop entrance animation no longer retains transform or filter after compl
 ### Laptop user-selection fit and persistent blur
 
 The user-selection screen follows the dynamic viewport height and uses compact clock, avatar, spacing and footer treatment below 800px tall. Laptop layouts fit the entire selection and footer without scrolling. Content sections do not shrink over their controls; very short screens retain accessible scrolling rather than clipping actions. Footer targets are at least 44px high. The blur overlay is viewport-fixed, so scrolling cannot reveal a sharp strip of wallpaper. Verified at 1536?704, 1366?617, 1280?570, 1920?880, two mobile sizes and short landscape, including keyboard entry and switching users.
+
+
+The boot loading group retains its intrinsic content height and is centered by the boot screen grid. Dynamic viewport sizing belongs to `.os-login`, not `.boot-center`. Boot geometry regression checks cover laptop, desktop and mobile, and verify transition into the fitted user-selection screen.

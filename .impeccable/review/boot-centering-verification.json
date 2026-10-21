@@ -1,0 +1,21 @@
+{
+  "checks": [
+    "Loading group is centered on both axes at 1536x704",
+    "Loading content keeps intrinsic height at 1536px",
+    "Boot screen does not scroll at 1536px",
+    "User selection retains fit and fixed blur at 1536px",
+    "Skip and visitor entry still work at 1536px",
+    "Loading group is centered on both axes at 1920x880",
+    "Loading content keeps intrinsic height at 1920px",
+    "Boot screen does not scroll at 1920px",
+    "User selection retains fit and fixed blur at 1920px",
+    "Skip and visitor entry still work at 1920px",
+    "Loading group is centered on both axes at 320x616",
+    "Loading content keeps intrinsic height at 320px",
+    "Boot screen does not scroll at 320px",
+    "User selection retains fit and fixed blur at 320px",
+    "Skip and visitor entry still work at 320px",
+    "No runtime errors"
+  ],
+  "errors": []
+}
